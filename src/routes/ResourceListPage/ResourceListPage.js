@@ -20,7 +20,7 @@ export default class ResourceListPage extends Component {
     const { resourceList = [] } = this.context
     return resourceList.map(resource =>
       <Resource
-        key={resource.id}
+        key={resource.resource_id}
         resource={resource}
         />
       )
@@ -29,6 +29,7 @@ export default class ResourceListPage extends Component {
       const { error } = this.context
       return (
         <Section list className='ArticleListPage'>
+        <p>Articles List</p>
         {error
           ? <p className='red'>There was an error, try again</p>
           : this.renderResrouces()}

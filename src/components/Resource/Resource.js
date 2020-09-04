@@ -4,24 +4,24 @@ import { Link } from 'react-router-dom';
 
 export default class Resource extends React.Component {
   render() {
-    const { resourceList } = this.props
+    const { resource } = this.props
     return (
-      <Link to={`/resources/${resourceList.id}`} className='ResourceItem'>
+      <Link to={`/resources/${resource.resource_id}`} className='ResourceItem'>
         <header>
-          <h3>{resourceList.category}</h3>
-          <h4>{resourceList.title}</h4>
+          <h3>{resource.category}</h3>
+          <h4>{resource.title}</h4>
         </header>
         <main>
-          <a href={`${resourceList.phone_number}`}>{resourceList.phone_number}</a>
-          <a href={`${resourceList.url}`}>{resourceList.url}</a>
-          <span>{resourceList.address}</span>
-          <span>{resourceList.city}</span>
-          <span>{resourceList.state}</span>
-          <span>{resourceList.zip_code}</span>
-          <span>{resourceList.county}</span>
-          <span>{resourceList.facebook}</span>
-          <span>{resourceList.twitter}</span>
-          <span>{resourceList.instagram}</span>
+          <a href={`${resource.phone_number}`}>{resource.phone_number}</a>
+          <a href={`${resource.url}`}>{resource.url}</a>
+          <span>{resource.address}</span>
+          <span>{resource.city}</span>
+          <span>{resource.state}</span>
+          <span>{resource.zip_code}</span>
+          <span>{resource.county}</span>
+          <span>{resource.facebook}</span>
+          <span>{resource.twitter}</span>
+          <span>{resource.instagram}</span>
         </main>
       </Link>
     )
