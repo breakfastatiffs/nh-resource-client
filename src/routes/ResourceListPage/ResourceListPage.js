@@ -8,8 +8,7 @@ import './ResourceListPage.css';
 export default class ResourceListPage extends Component {
   static contextType = ResourceListContext
 
-  //once you get data then assign it to this.state.resources
-  componentDidMount () { // ADD FETCH FOR DATA 
+  componentDidMount () { 
     this.context.clearError()
     ResourceApiService.getResources()
       .then(this.context.setResourceList)
@@ -29,7 +28,6 @@ export default class ResourceListPage extends Component {
       const { error } = this.context
       return (
         <Section list className='ArticleListPage'>
-        <p>Articles List</p>
         {error
           ? <p className='red'>There was an error, try again</p>
           : this.renderResrouces()}
