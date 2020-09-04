@@ -3,9 +3,13 @@ import { Route, Switch } from 'react-router-dom'
 import Header from '../Header/Header';
 import ResourceListPage from '../../routes/ResourceListPage/ResourceListPage';
 import ResourcePage from '../../routes/ResourcePage/ResourcePage';
-import './App.css';
+import About from '../../routes/About/About';
+import AdminLogin from '../../routes/AdminLogin/AdminLogin';
+import NotFoundPage from'../../routes/NotFoundPage/NotFoundPage';
 import { ResourceListProvider } from '../../context/ResourceListContext';
-import { ResourceProvider } from '../../context/ResourceContext'
+import { ResourceProvider } from '../../context/ResourceContext';
+import './App.css';
+import AddResource from '../../routes/AddResource/AddResource';
 
 export default class App extends React.Component {
   state = { hasError: false }
@@ -32,6 +36,21 @@ export default class App extends React.Component {
               <Route
                 path={'/resources/:resourceId'}
                 component={ResourcePage}
+              />
+              <Route
+              path={'/about'}
+              component={About}
+              />
+              <Route
+              path={'/admin-login'}
+              component={AdminLogin}
+              />
+              <Route
+              path={'/add-resource'}
+              component={AddResource}
+              />
+              <Route
+              component={NotFoundPage}
               />
             </Switch>
           </main>
