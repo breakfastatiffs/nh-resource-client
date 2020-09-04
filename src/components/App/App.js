@@ -1,138 +1,42 @@
 import React from 'react';
-import ResourceListMain from '../ResourceListMain/ResourceListMain';
-import ResourceListNav from '../ResourceListNav/ResourceListNav';
-import ResourceMainPage from '../ResourceMainPage/ResourceMainPage';
-import AddResource from '../AddResource/AddResource';
-import Nav from '../Nav/Nav';
-// import Login from '../Login/Login';
-import { Route, Link } from 'react-router-dom';
-import ApiContext from '../../ApiContext';
-import config from '../../config';
+import Header from '../Header/Header';
+import ResourceListPage from '../../routes/ResourceListPage/ResourceListPage';
+import ResourceApiService from '../../ResourceApiService';
+import ResourceListContext from '../../context/ResourceListContext';
 import './App.css';
 
 export default class App extends React.Component {
-  state = {
-    resources: [],
-    categories: [],
-  };
-
-  componentDidMount() {
-    Promise.all([
-      fetch(`${config.API_ENDPOINT}/resources`),
-      fetch(`${config.API_ENDPOINT}/categories`)
-    ])
-      .then(([resourcesRes, categoriesRes]) => {
-        if (!resourcesRes.ok)
-          return resourcesRes.json().then(e => Promise.reject(e))
-        if (!categoriesRes.ok)
-          return categoriesRes.json().then(e => Promise.reject(e))
-
-        return Promise.all([
-          resourcesRes.json(),
-          categoriesRes.json(),
-        ])
-      })
-      .then(([resources, categories]) => {
-        this.setState({ resources, categories })
-      })
-      .catch(error => {
-        console.error({ error })
-      })
+  static contextType = ResourceListContext
+  static defaultProps = { // if no props, then default props
+    match: {
+      params: {}
+    },
   }
 
-  handleAddResource = resource => {
-    this.setState({
-      resources: [
-        ...this.state.resources,
-        resource
-      ]
-    })
-  }
-
-  handleUpdateResource = resourceId => {
-    this.setState({
-      resources: this.state.resources.filter(resource => resource.id !== resourceId)
-    })
-  }
-
-  handleDeleteResource = resourceId => {
-    this.setState({
-      resources: this.state.resources.filter(resource => resource.id !== resourceId)
-    })
-  }
-  
-  renderNavRoutes() {
-    return (
-      <>
-        {['/', '/categories/:categoriesId'].map(path =>
-          <Route
-          exact
-          key={path}
-          path={path}
-          component={ResourceListNav}
-        />
-        )}
-        <Route
-          path='resources/:resourcesId'
-          component={Nav}
-        />
-        <Route
-          path='/add-resource'
-          component={Nav}
-        />
-      </>
-    )
-  }
-
-  renderMainRoutes() {
-    return (
-      <>
-        {['/', '/categories/:categoriesId'].map(path =>
-          <Route
-          exact
-          key={path}
-          path={path}
-          component={ResourceListMain}
-        />
-        )}
-        <Route
-          path='resources/:resourcesId'
-          component={ResourceMainPage}
-        />
-        <Route
-          path='/add-resource'
-          component={AddResource}
-        />
-      </>
-    )
-  }
-
-  render() {
-    const value = {
-      resources: this. state.resources,
-      categories: this.state.categories,
-      AddResource: this.handleAddResource,
-      updateResource: this.handleUpdateResource,
-      deleteResource: this.handleDeleteResource,
+  constructor(props) { // constructs class & when class is injected/rendered, then it instantiates object inside state
+    super()
+    this.state = {
+      error: null,
+      isLoaded: false,
+      resources: [], // GET DATA FROM RESOURCES FETCH AND ASSIGN IT TO RESOURCES
     }
-    return (
-      <ApiContext.Provider value={value}>
-        <div className='App'>
-          <nav className='App_nav'>
-            {this.renderNavRoutes()}
-          </nav>
-          <header className='App_header'>
-            <h1>
-              <Link to='/'>Altergencies</Link>
-              {' '}
-            </h1>
-          </header>
-          <main className='App_main'>
-            {this.renderMainRoutes()}
-          </main>
-        </div>
-      </ApiContext.Provider>
-    )
   }
 
+  //once you get data then assign it to this.state.resources
+
+  componentDidMount () { // ADD FETCH FOR DATA 
+    const { resources } = this.props.match.params
+    ResourceApiService.getResources()
+      .then(this.context.setResourceList)
+}
+  render () { 
+      return (
+        <>
+          <Header />
+          <ResourceListPage 
+            {...this.state.resources} 
+          />
+        </>
+      )
+  }
 }
