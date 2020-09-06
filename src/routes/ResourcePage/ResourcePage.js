@@ -1,5 +1,6 @@
 import React from 'react';
-import ResourceContext from '../../context/ResourceListContext';
+import ResourceContext from '../../context/ResourceContext';
+import ResourceListContext from '../../context/ResourceListContext';
 import ResourceApiService from '../../ResourceApiService';
 import { Hyph, Section } from '../../helper';
 
@@ -26,20 +27,10 @@ export default class ResourcePage extends React.Component {
   }
 
   renderResource() {
-    const { resource, comments } = this.context
+    const { resource } = this.context
     return <>
-      <p>
-        <ResourceCategory resource={resource} />
-        {resource && <>
-          <Hyph />
-          {/* <ResourceAuthor resource={resource} /> */}
-        </>}
-        <Hyph />
-        {/* <NiceDate date={resource.date_created} /> */}
-      </p>
+    <h2>{resource.title}</h2>
       <ResourceContent resource={resource} />
-      {/* <ResourceComments comments={comments} />
-      <CommentForm /> */}
     </>
   }
 
@@ -63,68 +54,30 @@ export default class ResourcePage extends React.Component {
   }
 }
 
-function ResourceCategory({ resource }) {
-  return (
-    <span className='ResourcePage__category'>
-      {/* <StyleIcon style={resource.style} /> */}
-      {' '}
-      {resource.category}
-    </span>
-  )
-}
-
-function ResourceAuthor({ resource = nullResource }) {
-  return (
-    <span className='ResourcePage__author'>
-      {resource.author.full_name}
-    </span>
-  )
-}
-
 function ResourceContent({ resource }) {
   return (
     <p className='ResourcePage__content'>
-      {/* <a href={`tel:${resource.phone_number}`}>{resource.phone_number}</a> */}
-          <br/>
+      <span>{resource.category}</span>
+      <br />
+      <a href={`tel:${resource.phone_number}`}>{resource.phone_number}</a>
+           <br/>
           <a href={`${resource.url}`}>{resource.url}</a>
           <br/>
-          <span>{resource.street_address}</span>
+          <span>{resource.street}</span>
           <br/>
           <span>{resource.city}</span>
           <br/>
           <span>{resource.state}</span>
           <br/>
-          <span>{resource.zip_code}</span>
+          <span>{resource.zipcode}</span>
           <br/>
-          <span>{resource.county}</span>
+          <span>{resource.county} County</span>
           <br/>
-          <span>{resource.facebook}</span>
+          <a href={`${resource.facebook}`}>{resource.facebook}</a>
           <br/>
-          <span>{resource.twitter}</span>
+          <a href={`${resource.twitter}`}>{resource.twitter}</a>
           <br/>
-          <span>{resource.instagram}</span>
+          <a href={`${resource.instagram}`}>{resource.instagram}</a>
     </p>
-  )
-}
-
-function ResourceComments({ comments = [] }) {
-  return (
-    <ul className='ResourcePage__comment-list'>
-      {comments.map(comment =>
-        <li key={comment.id} className='ResourcePage__comment'>
-          <p className='ResourcePage__comment-text'>
-            {/* <FontAwesomeIcon
-              size='lg'
-              icon='quote-left'
-              className='ResourcePage__comment-icon blue'
-            /> */}
-            {comment.text}
-          </p>
-          <p className='ResourcePage__comment-user'>
-            {comment.user.full_name}
-          </p>
-        </li>
-      )}
-    </ul>
   )
 }

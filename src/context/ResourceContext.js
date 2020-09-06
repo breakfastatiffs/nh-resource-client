@@ -38,21 +38,20 @@ export class ResourceProvider extends React.Component {
     this.setState({ resource })
   }
 
-  setComments = comments => {
-    this.setState({ comments })
-  }
+  // setComments = comments => {
+  //   this.setState({ comments })
+  // }
 
   clearResource = () => {
-    this.setArticle(nullResource)
-    this.setComments([])
+    this.setResource(nullResource)
   }
 
-  addComment = comment => {
-    this.setComments([
-      ...this.state.comments,
-      comment
-    ])
-  }
+  // addComment = comment => {
+  //   this.setComments([
+  //     ...this.state.comments,
+  //     comment
+  //   ])
+  // }
 
   render() {
     const value = {
