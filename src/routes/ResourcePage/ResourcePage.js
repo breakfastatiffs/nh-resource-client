@@ -2,16 +2,17 @@ import React from 'react';
 import ResourceContext from '../../context/ResourceContext';
 import ResourceApiService from '../../ResourceApiService';
 import { Hyph, Section } from '../../helper';
+import './ResourcePage.css';
 
 export default class ResourcePage extends React.Component {
   static defaultProps = {
     match: {
-      params: {} 
+      params: {}
     },
   }
 
   static contextType = ResourceContext
-  
+
   componentDidMount() {
     const { resourceId } = this.props.match.params
     this.context.clearError()
@@ -27,7 +28,7 @@ export default class ResourcePage extends React.Component {
   renderResource() {
     const { resource } = this.context
     return <>
-    <h2>{resource.title}</h2>
+      <h2 className='ResourcePageTitle'>{resource.title}</h2>
       <ResourceContent resource={resource} />
       <EditResource resource={resource} />
       <Hyph />
@@ -42,8 +43,8 @@ export default class ResourcePage extends React.Component {
       content = (error.error === `Resource doesn't exist`)
         ? <p className='red'>Resource not found</p>
         : <p className='red'>There was an error</p>
-    // } else if (!resource.id) {
-    //   content = <div className='loading' />
+      // } else if (!resource.id) {
+      //   content = <div className='loading' />
     } else {
       content = this.renderResource()
     }
@@ -58,43 +59,59 @@ export default class ResourcePage extends React.Component {
 function ResourceContent({ resource }) {
   return (
     <p className='ResourcePage__content'>
-      <span>{resource.category}</span>
-      <br />
-      <a href={`tel:${resource.phone_number}`}>{resource.phone_number}</a>
-           <br/>
-          <a href={`${resource.url}`} target='_blank'>{resource.url }</a>
-          <br/>
+      <ul className='ResourcePageUL'>
+        <li id='ResourcePageIL'>
+          <span>{resource.category}</span>
+        </li>
+        <li id='ResourcePageIL'>
+          <a href={`tel:${resource.phone_number}`}>{resource.phone_number}</a>
+        </li>
+        <li id='ResourcePageIL'>
+          <a href={`${resource.url}`} target='_blank'>{resource.url}</a>
+        </li>
+        <li id='ResourcePageIL'>
           <span>{resource.street}</span>
-          <br/>
+        </li>
+        <li id='ResourcePageIL'>
           <span>{resource.city},</span>
-          <br/>
+        </li>
+        <li id='ResourcePageIL'>
           <span>{resource.state}</span>
-          <br/>
+        </li>
+        <li id='ResourcePageIL'>
           <span>{resource.zipcode}</span>
-          <br/>
+        </li>
+        <li id='ResourcePageIL'>
           <span>{resource.county} County</span>
-          <br/>
+        </li>
+        <li id='ResourcePageIL'>
           <a href={`${resource.facebook}`} target='_blank'>{resource.facebook}</a>
-          <br/>
+        </li>
+        <li id='ResourcePageIL'>
           <a href={`${resource.twitter}`} target='_blank'>{resource.twitter}</a>
-          <br/>
+        </li>
+        <li id='ResourcePageIL'>
           <a href={`${resource.instagram}`} target='_blank'>{resource.instagram}</a>
+        </li>
+      </ul>
     </p>
   )
 }
 
-function EditResource ({ resource }) {
+function EditResource({ resource }) {
   return (
     <button
+      className='editBtn'
       onClick={() => resource.editResource(resource.id)}
     >
       Edit</button>
   )
 }
 
-function DeleteResource ({ resource }) {
+function DeleteResource({ resource }) {
   return (
     <button
+      className='deleteBtn'
       onClick={() => resource.deleteResource(resource.id)}
     >
       Delete</button>

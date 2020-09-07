@@ -1,0 +1,11 @@
+body {
+    display: flex;
+    flex-direction: column;
+    max-width: 275px;
+    padding-left: 8px;
+    /* background:
+      repeating-linear-gradient(45deg, #77BFA3, transparent),
+      repeating-linear-gradient(45deg, #98C9A3 0%, #98C9A3 5%, transparent 5%, transparent 10%, #98C9A3 10%, #98C9A3 11%, transparent 13%),
+      repeating-linear-gradient(-45deg, #6e796d 0%, #6e796d 5%, transparent 5%, transparent 10%, #6e796d 10%, #6e796d 11%, transparent 14%) */     
+}
+

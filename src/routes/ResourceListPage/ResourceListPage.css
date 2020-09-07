@@ -1,0 +1,6 @@
+.ResourceListPage {
+    display: flex;
+    flex-direction: column;
+    max-width: 275px;
+    padding-left: 8px;
+}

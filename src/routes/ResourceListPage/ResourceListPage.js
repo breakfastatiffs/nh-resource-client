@@ -27,7 +27,7 @@ export default class ResourceListPage extends Component {
     render () {
       const { error } = this.context
       return (
-        <Section list className='ArticleListPage'>
+        <Section list className='ResourceListPage'>
         {error
           ? <p className='red'>There was an error, try again</p>
           : this.renderResrouces()}

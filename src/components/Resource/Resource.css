@@ -1,0 +1,11 @@
+.ResourceTitle {
+ 
+}
+
+.ResourceItem {
+  text-decoration: none;
+}
+
+.ResourceItem a:hover {
+  cursor: pointer;
+}

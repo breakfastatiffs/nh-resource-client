@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Resource.css';
 
 export default class Resource extends React.Component {
   render() {
@@ -8,7 +9,7 @@ export default class Resource extends React.Component {
       <>
       <Link to={`/resources/${resource.resource_id}`} className='ResourceItem'>
         <header>
-          <h4>{resource.title}</h4>
+          <h4 className='ResourceTitle'>{resource.title}</h4>
         </header>
       </Link>
         <main>
