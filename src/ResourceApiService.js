@@ -39,20 +39,20 @@ const ResourceApiService = {
   },
   postResource(
     resourceId,
-    title,
     category,
+    title,
     phone_number,
-    url,
-    address,
+    street_address,
     city,
     state,
     zip_code,
     county,
+    url,
     facebook,
     twitter,
     instagram
   ) {
-    return fetch(`${config.API_ENDPOINT}/admin/post`, {
+    return fetch(`${config.API_ENDPOINT}/add-resource`, {
       method: 'POST',
       headers: {
         // 'authorization' : `basic ${TokenService.getAuthToken()}`, // protected endpoints
@@ -60,15 +60,15 @@ const ResourceApiService = {
       },
       body: JSON.stringify({
         resource_id: resourceId,
-        title,
         category,
+        title,
         phone_number,
-        url,
-        address,
+        street_address,
         city,
         state,
         zip_code,
         county,
+        url,
         facebook,
         twitter,
         instagram
@@ -95,7 +95,7 @@ const ResourceApiService = {
     twitter,
     instagram
   ) {
-    return fetch(`${config.API_ENDPOINT}/admin/post`, {
+    return fetch(`${config.API_ENDPOINT}/add-resource`, {
       method: 'PATCH',
       headers: {
         // 'authorization' : `basic ${TokenService.getAuthToken()}`, // protected endpoints

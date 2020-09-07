@@ -31,6 +31,9 @@ export default class ResourcePage extends React.Component {
     return <>
     <h2>{resource.title}</h2>
       <ResourceContent resource={resource} />
+      <EditResource resource={resource} />
+      <Hyph />
+      <DeleteResource resource={resource} />
     </>
   }
 
@@ -61,11 +64,11 @@ function ResourceContent({ resource }) {
       <br />
       <a href={`tel:${resource.phone_number}`}>{resource.phone_number}</a>
            <br/>
-          <a href={`${resource.url}`}>{resource.url}</a>
+          <a href={`${resource.url}`} target='_blank'>{resource.url }</a>
           <br/>
           <span>{resource.street}</span>
           <br/>
-          <span>{resource.city}</span>
+          <span>{resource.city},</span>
           <br/>
           <span>{resource.state}</span>
           <br/>
@@ -73,11 +76,23 @@ function ResourceContent({ resource }) {
           <br/>
           <span>{resource.county} County</span>
           <br/>
-          <a href={`${resource.facebook}`}>{resource.facebook}</a>
+          <a href={`${resource.facebook}`} target='_blank'>{resource.facebook}</a>
           <br/>
-          <a href={`${resource.twitter}`}>{resource.twitter}</a>
+          <a href={`${resource.twitter}`} target='_blank'>{resource.twitter}</a>
           <br/>
-          <a href={`${resource.instagram}`}>{resource.instagram}</a>
+          <a href={`${resource.instagram}`} target='_blank'>{resource.instagram}</a>
     </p>
+  )
+}
+
+function EditResource ({ resource }) {
+  return (
+    <button>Edit</button>
+  )
+}
+
+function DeleteResource ({ resource }) {
+  return (
+    <button>Delete</button>
   )
 }

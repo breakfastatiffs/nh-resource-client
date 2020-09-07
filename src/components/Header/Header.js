@@ -19,6 +19,9 @@ export default class Header extends React.Component {
           <li class="sub-menu-parent" tab-index="0">
           <Link to='/about'>About</Link>
             </li>
+            <li class="sub-menu-parent" tab-index="0">
+          <Link to='/add-resource'>Add Resource</Link>
+            </li>
           <li class="sub-menu-parent" tab-index="0">
             <a>Search By County</a>
             <ul class='sub-menu'>

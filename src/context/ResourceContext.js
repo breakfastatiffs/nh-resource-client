@@ -14,7 +14,7 @@ const ResourceContext = React.createContext({
   setResource: () => {},
   clearResource: () => {},
   setComments: () => {},
-  addComment: () => {},
+  addResource: () => {},
 })
 
 export default ResourceContext
@@ -46,12 +46,12 @@ export class ResourceProvider extends React.Component {
     this.setResource(nullResource)
   }
 
-  // addComment = comment => {
-  //   this.setComments([
-  //     ...this.state.comments,
-  //     comment
-  //   ])
-  // }
+  addResource = resource => {
+    this.setComments([
+      ...this.state.comments,
+      resource
+    ])
+  }
 
   render() {
     const value = {
@@ -63,7 +63,7 @@ export class ResourceProvider extends React.Component {
       setResource: this.setResource,
       setComments: this.setComments,
       clearResource: this.clearResource,
-      addComment: this.addComment,
+      addResource: this.addResource,
     }
     return (
       <ResourceContext.Provider value={value}>
