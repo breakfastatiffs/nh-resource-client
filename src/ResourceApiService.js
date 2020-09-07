@@ -52,7 +52,7 @@ const ResourceApiService = {
     twitter,
     instagram
   ) {
-    return fetch(`${config.API_ENDPOINT}/add-resource`, {
+    return fetch(`${config.API_ENDPOINT}/add`, {
       method: 'POST',
       headers: {
         // 'authorization' : `basic ${TokenService.getAuthToken()}`, // protected endpoints

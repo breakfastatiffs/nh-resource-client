@@ -1,29 +1,43 @@
 import React from 'react';
 import ResourceContext from '../../context/ResourceContext';
 import ResourceApiService from '../../ResourceApiService';
-import { Button, Textarea } from '../../helper';
+import { Button, Input } from '../../helper';
 
 export default class AddResource extends React.Component {
-  static contextType = ResourceContext;
+  static contextType = ResourceContext
 
   handleSubmit = e => {
     e.preventDefault()
     const { resource } = this.context
-    // const { text } = e.target
+    const {
+      title,
+      category, 
+      phone_number, 
+      street_address, 
+      city, 
+      state, 
+      zip_code, 
+      county, 
+      url, 
+      facebook, 
+      twitter, 
+      instagram
+    } = e.target
+
     ResourceApiService.postResource(
       resource.id,
-      resource.title,
-      resource.category, 
-      resource.phone_number, 
-      resource.street_address, 
-      resource.city, 
-      resource.state, 
-      resource.zip_code, 
-      resource.county, 
-      resource.url, 
-      resource.facebook, 
-      resource.twitter, 
-      resource.instagram
+      title.value,
+      category.value, 
+      phone_number.value, 
+      street_address.value,
+      city.value,
+      state.value, 
+      zip_code.value, 
+      county.value, 
+      url.value,
+      facebook.value, 
+      twitter.value,
+      instagram.value
     )
     .then(this.context.addResource)
     .then(() => {
@@ -50,58 +64,122 @@ export default class AddResource extends React.Component {
         onSubmit={this.handleSubmit}
         >
         <div className='category-options'>
-          <label htmlfor="category">Category:</label>
-          <br />          
-          <input id="category" type="radio" />
-          <label htmlfor="category-type">Animal Services</label>
-          <input id="category" type="radio" />
-          <label htmlfor="category-type">Disability Services</label>
-          <input id="category" type="radio" />
-          <label htmlfor="category-type">Immigration Services</label>
-          <input id="category" type="radio" />
-          <label htmlfor="category-type">LGBTQ+</label>
-          <input id="category" type="radio" />
-          <label htmlfor="category-type">Mental Health</label>
-          <input id="category" type="radio" />
-          <label htmlfor="category-type">Sexual & Domestic Violence</label>
-          <input id="category" type="radio" />
-          <label htmlfor="category-type">Substance Use</label>
-          <input id="category" type="radio" />
-          <label htmlfor="category-type">Veterans</label>
+          <label htmlFor="category">Category:</label>
+          <br />
+          <Input
+            name='category'
+            type='radio'
+          >
+          </Input>
+          <label htmlFor="category-type">Animal Services</label>
+          <Input
+            name='category'
+            type='radio'
+          >
+          </Input>
+          <label htmlFor="category-type">Disability Services</label>
+          <Input
+            name='category'
+            type='radio'
+          >
+          </Input>
+          <label htmlFor="category-type">Immigration Services</label>
+          <Input
+            name='category'
+            type='radio'
+          >
+          </Input>
+          <label htmlFor="category-type">LGBTQ+</label>
+          <Input
+            name='category'
+            type='radio'
+          >
+          </Input>
+          <label htmlFor="category-type">Mental Health</label>
+          <Input
+            name='category'
+            type='radio'
+          >
+          </Input>
+          <label htmlFor="category-type">Sexual & Domestic Violence</label>
+          <Input
+            name='category'
+            type='radio'
+          >
+          </Input>
+          <label htmlFor="category-type">Substance Use</label>
+          <Input
+            name='category'
+            type='radio'
+          >
+          </Input>
+          <label htmlFor="category-type">Veterans</label>
         </div>
         <br />
-        <label htmlfor="title">Business Name:</label>
-        <input id="title" type="text" />
+        
+        <label htmlFor="title">Business Name:</label>
+        <Input
+            name='title'
+        >
+        </Input>
         <br />
-        <label htmlfor="number">Phone Number:</label>
-        <input id="number" type="text" />
+        <label htmlFor="number">Phone Number:</label>
+        <Input
+            name='phone_number'
+        >
+        </Input>
         <br />
-        <label htmlfor="url">Website:</label>
-        <input id="url" type="text" />
+        <label htmlFor="url">Website:</label>
+        <Input
+            name='url'
+        >
+        </Input>
         <br />
-        <label htmlfor="address">Street Address:</label>
-        <input class="address" type="text" />
+        <label htmlFor="address">Street Address:</label>
+        <Input
+            name='street_address'
+        >
+        </Input>
         <br />
-        <label htmlfor="address">Town:</label>
-        <input class="address" type="text" />
+        <label htmlFor="town">Town:</label>
+        <Input
+            name='city'
+        >
+        </Input>
         <br />
-        <label htmlfor="address">County:</label>
-        <input class="address" type="text" />
+        <label htmlFor="county">County:</label>
+        <Input
+            name='county'
+        >
+        </Input>        <br />
+        <label htmlFor="zip_code">Zipcode:</label>
+        <Input
+            name='zip_code'
+        >
+        </Input>        <br />
+        <label htmlFor="state">State:</label>
+        <Input
+            name='state'
+        >
+        </Input>
         <br />
-        <label htmlfor="address">Zipcode:</label>
-        <input class="address" type="text" />
+        <label htmlFor="facebook">Facebook:</label>
+        <Input
+            name='facebook'
+        >
+        </Input>
         <br />
-        <label htmlfor="address">State:</label>
-        <input class="address" type="text" />
+        <label htmlFor="twitter">Twitter:</label>
+        <Input
+            name='twitter'
+        >
+        </Input>
         <br />
-        <label htmlfor="address">Facebook:</label>
-        <input class="social" type="text" />
-        <br />
-        <label htmlfor="address">Twitter:</label>
-        <input class="social" type="text" />
-        <br />
-        <label htmlfor="address">Instagram:</label>
-        <input class="social" type="text" />
+        <label htmlFor="address">Instagram:</label>
+        <Input
+            name='instagram'
+        >
+        </Input>
         <br />
         <Button id="submitbtn" type="submit">Create</Button>
       </form>

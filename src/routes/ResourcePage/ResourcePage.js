@@ -1,6 +1,5 @@
 import React from 'react';
 import ResourceContext from '../../context/ResourceContext';
-import ResourceListContext from '../../context/ResourceListContext';
 import ResourceApiService from '../../ResourceApiService';
 import { Hyph, Section } from '../../helper';
 
@@ -10,7 +9,6 @@ export default class ResourcePage extends React.Component {
       params: {} 
     },
   }
-
 
   static contextType = ResourceContext
   
@@ -87,12 +85,18 @@ function ResourceContent({ resource }) {
 
 function EditResource ({ resource }) {
   return (
-    <button>Edit</button>
+    <button
+      onClick={() => resource.editResource(resource.id)}
+    >
+      Edit</button>
   )
 }
 
 function DeleteResource ({ resource }) {
   return (
-    <button>Delete</button>
+    <button
+      onClick={() => resource.deleteResource(resource.id)}
+    >
+      Delete</button>
   )
 }

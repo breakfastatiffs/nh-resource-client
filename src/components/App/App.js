@@ -46,7 +46,7 @@ export default class App extends React.Component {
               component={AdminLogin}
               />
               <Route
-              path={'/add-resource'}
+              path={'/add'}
               component={AddResource}
               />
               <Route

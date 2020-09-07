@@ -1,8 +1,18 @@
 import React from 'react';
 
 export const nullResource = {
-  author: {},
-  tags: [],
+  title: [],
+  category: [], 
+  phone_number: [], 
+  street_address: [], 
+  city: [], 
+  state: [], 
+  zip_code: [], 
+  county: [], 
+  url: [], 
+  facebook: [], 
+  twitter: [], 
+  instagram: [],
 }
 
 const ResourceContext = React.createContext({
@@ -15,6 +25,8 @@ const ResourceContext = React.createContext({
   clearResource: () => {},
   setComments: () => {},
   addResource: () => {},
+  editResource: () => {},
+  deleteResource: () => {},
 })
 
 export default ResourceContext
@@ -37,7 +49,6 @@ export class ResourceProvider extends React.Component {
   setResource = resource => {
     this.setState({ resource })
   }
-
   // setComments = comments => {
   //   this.setState({ comments })
   // }
@@ -53,6 +64,14 @@ export class ResourceProvider extends React.Component {
     ])
   }
 
+  editResource = resource => {
+    this.setState({ resource }) //resource.edit
+  }
+
+  deleteResource = resource => {
+    this.setState({ resource }) //resource.delete
+  }
+
   render() {
     const value = {
       resource: this.state.resource,
@@ -64,6 +83,8 @@ export class ResourceProvider extends React.Component {
       setComments: this.setComments,
       clearResource: this.clearResource,
       addResource: this.addResource,
+      editResource: this.editResource,
+      deleteResource: this.deleteResource,
     }
     return (
       <ResourceContext.Provider value={value}>
