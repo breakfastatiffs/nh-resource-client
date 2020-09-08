@@ -17,13 +17,13 @@ export const nullResource = {
 
 const ResourceContext = React.createContext({
   resource: nullResource,
-  comments: [],
+  resources: [],
   error: null,
   setError: () => {},
   clearError: () => { },
   setResource: () => {},
   clearResource: () => {},
-  setComments: () => {},
+  setResources: () => {},
   addResource: () => {},
   editResource: () => {},
   deleteResource: () => {},
@@ -49,17 +49,18 @@ export class ResourceProvider extends React.Component {
   setResource = resource => {
     this.setState({ resource })
   }
-  // setComments = comments => {
-  //   this.setState({ comments })
-  // }
+
+  setResources = resources => {
+    this.setState({ resources })
+  }
 
   clearResource = () => {
     this.setResource(nullResource)
   }
 
-  addResource = resource => {
-    this.setComments([
-      ...this.state.comments,
+  addResource = resources => {
+    this.setResources([
+      ...this.state.resources,
       resource
     ])
   }
@@ -80,7 +81,7 @@ export class ResourceProvider extends React.Component {
       setError: this.setError,
       clearError: this.clearError,
       setResource: this.setResource,
-      setComments: this.setComments,
+      setResources: this.setResources,
       clearResource: this.clearResource,
       addResource: this.addResource,
       editResource: this.editResource,

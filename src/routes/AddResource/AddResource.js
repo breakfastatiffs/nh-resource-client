@@ -10,10 +10,10 @@ export default class AddResource extends React.Component {
     e.preventDefault()
     const { resource } = this.context
     const {
-      title,
       category,
+      title,
       phone_number,
-      street_address,
+      street,
       city,
       state,
       zip_code,
@@ -26,10 +26,10 @@ export default class AddResource extends React.Component {
 
     ResourceApiService.postResource(
       resource.id,
-      title.value,
       category.value,
+      title.value,
       phone_number.value,
-      street_address.value,
+      street.value,
       city.value,
       state.value,
       zip_code.value,
@@ -41,18 +41,18 @@ export default class AddResource extends React.Component {
     )
       .then(this.context.addResource)
       .then(() => {
+        resource.category.value = '',
         resource.title.value = '',
-          resource.category.value = '',
-          resource.phone_number.value = '',
-          resource.street_address.value = '',
-          resource.city.value = '',
-          resource.state.value = '',
-          resource.zip_code.value = '',
-          resource.county.value = '',
-          resource.url.value = '',
-          resource.facebook.value = '',
-          resource.twitter.value = '',
-          resource.instagram.value = ''
+        resource.phone_number.value = '',
+        resource.street.value = '',
+        resource.city.value = '',
+        resource.state.value = '',
+        resource.zip_code.value = '',
+        resource.county.value = '',
+        resource.url.value = '',
+        resource.facebook.value = '',
+        resource.twitter.value = '',
+        resource.instagram.value = ''
       })
       .catch(this.context.setError)
   }
@@ -157,7 +157,7 @@ export default class AddResource extends React.Component {
           <li>
             <label htmlFor="address">Street Address:</label>
             <Input
-              name='street_address'
+              name='street'
             >
             </Input>
           </li>

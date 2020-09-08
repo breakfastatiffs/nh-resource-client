@@ -84,9 +84,9 @@ function ResourceContent({ resource }) {
           </li>
         </div>
         <li className='SocialMedia' id='ResourcePageIL'>
-          <a href={`${resource.facebook}`} class='fa fa-facebook' target='_blank'></a>
-          <a href={`${resource.twitter}`} class='fa fa-twitter' target='_blank'></a>
-          <a href={`${resource.instagram}`} class='fa fa-instagram' target='_blank'></a>
+          <a href={`${resource.facebook}`} className='fa fa-facebook' target='_blank'></a>
+          <a href={`${resource.twitter}`} className='fa fa-twitter' target='_blank'></a>
+          <a href={`${resource.instagram}`} className='fa fa-instagram' target='_blank'></a>
           <p>Follow their social media pages!</p>
 
         </li>
