@@ -28,11 +28,11 @@ export default class ResourcePage extends React.Component {
   renderResource() {
     const { resource } = this.context
     return <>
-      <h2 className='ResourcePageTitle'>{resource.title}</h2>
       <ResourceContent resource={resource} />
-      <EditResource resource={resource} />
-      <Hyph />
-      <DeleteResource resource={resource} />
+      <div className='crudBtns'>
+        <EditResource resource={resource} />
+        <DeleteResource resource={resource} />
+      </div>
     </>
   }
 
@@ -58,40 +58,39 @@ export default class ResourcePage extends React.Component {
 
 function ResourceContent({ resource }) {
   return (
-    <p className='ResourcePage__content'>
+    <p className='ResourcePageContent'>
       <ul className='ResourcePageUL'>
-        <li id='ResourcePageIL'>
-          <span>{resource.category}</span>
-        </li>
-        <li id='ResourcePageIL'>
-          <a href={`tel:${resource.phone_number}`}>{resource.phone_number}</a>
-        </li>
-        <li id='ResourcePageIL'>
-          <a href={`${resource.url}`} target='_blank'>{resource.url}</a>
-        </li>
-        <li id='ResourcePageIL'>
-          <span>{resource.street}</span>
-        </li>
-        <li id='ResourcePageIL'>
-          <span>{resource.city},</span>
-        </li>
-        <li id='ResourcePageIL'>
-          <span>{resource.state}</span>
-        </li>
-        <li id='ResourcePageIL'>
-          <span>{resource.zipcode}</span>
-        </li>
-        <li id='ResourcePageIL'>
-          <span>{resource.county} County</span>
-        </li>
-        <li id='ResourcePageIL'>
-          <a href={`${resource.facebook}`} target='_blank'>{resource.facebook}</a>
-        </li>
-        <li id='ResourcePageIL'>
-          <a href={`${resource.twitter}`} target='_blank'>{resource.twitter}</a>
-        </li>
-        <li id='ResourcePageIL'>
-          <a href={`${resource.instagram}`} target='_blank'>{resource.instagram}</a>
+        <div className='ResourcePageHeader'>
+          <span className='ResourcePageTitle'>{resource.title}</span>
+          <br />
+          <span className='ResourcePageCategory'>{resource.category}</span>
+        </div>
+        <div className='ResourceContacts'>
+          <li className='ResourcePhone' id='ResourcePageIL'>
+            <a href={`tel:${resource.phone_number}`}>{resource.phone_number}</a>
+          </li>
+          <li id='ResourcePageIL'>
+            <a href={`${resource.url}`} target='_blank'>{resource.url}</a>
+          </li>
+        </div>
+        <div className='ResourceAddress'>
+          <li id='ResourcePageIL'>
+            <span>{resource.street}</span>
+          </li>
+          <li id='ResourcePageIL'>
+            <span>{resource.city}, </span>
+            <span>{resource.state}</span>
+          </li>
+          <li id='ResourcePageIL'>
+            <span>{resource.zipcode}</span>
+          </li>
+        </div>
+        <li className='SocialMedia' id='ResourcePageIL'>
+          <a href={`${resource.facebook}`} class='fa fa-facebook' target='_blank'></a>
+          <a href={`${resource.twitter}`} class='fa fa-twitter' target='_blank'></a>
+          <a href={`${resource.instagram}`} class='fa fa-instagram' target='_blank'></a>
+          <p>Follow their social media pages!</p>
+
         </li>
       </ul>
     </p>

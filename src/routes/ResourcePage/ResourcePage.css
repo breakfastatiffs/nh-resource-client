@@ -1,18 +1,63 @@
-.ResourcePageTitle {
-  padding-top: 1.8em;
-  padding-left: 1.8em;
-  font-size: 1.2em;
+.ResourcePageHeader{
+    text-align: center;
+    padding-top: .4em;
+    margin-bottom: 1em;
 }
+
+.ResourcePageTitle {
+  padding-left: 1em;
+  font-size: 1.1em;
+  font-weight: 600;
+  margin-bottom: 1em;
+}
+
+.ResourcePageCategory {
+    padding-top: 1.8em;
+    padding-left: 1em;
+    font-size: 1em;
+    font-weight: 500;
+  }
 
 .ResourcePageUL {
   display: flex;
   flex-direction: column;
+  padding: 0 25px;
 }
 
 #ResourcePageIL {
+  padding: .1em;
   list-style: none;
+  font-size: .92em;
 }
 
-.editBtn, .deleteBtn {
+.ResourceContacts {
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.ResourceAddress {
+  font-style: italic;
+  padding-left: 45px;
+}
+
+.crudBtns{
+  display: flex;
+  justify-content: space-around;
+}
+
+.ResourcePhone a {
+  color: #F45D01;
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.SocialMedia {
   text-align: center;
 }
+
+.fa {
+    padding: 20px;
+    font-size: 25px;
+    width: 30px;
+    text-decoration: none;
+  }

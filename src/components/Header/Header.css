@@ -7,10 +7,14 @@
 #navLI {
   list-style: none;
   display: inline;
+
 }
 
 .navUL{
-  margin: 10px;
+  margin: 0;
+  padding: 8px;
+  border-radius: 1em;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  background-color: #FFC857;
 }
