@@ -62,8 +62,6 @@ function ResourceContent({ resource }) {
       <ul className='ResourcePageUL'>
         <div className='ResourcePageHeader'>
           <span className='ResourcePageTitle'>{resource.title}</span>
-          <br />
-          <span className='ResourcePageCategory'>{resource.category}</span>
         </div>
         <div className='ResourceContacts'>
           <li className='ResourcePhone' id='ResourcePageIL'>

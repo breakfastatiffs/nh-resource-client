@@ -1,7 +1,12 @@
 .Header {
-  padding-top: 35px;
-    text-align: right;
-    font-size: .9em;
+  padding-top: 25px;
+  text-align: right;
+  font-size: 1em;
+}
+
+.Header p{
+  color: #5f5956;
+  font-family: helvetica;
 }
 
 #navLI {
