@@ -13,12 +13,12 @@ export default class AddResource extends React.Component {
       category,
       title,
       phone_number,
+      url,
       street,
       city,
-      state,
-      zip_code,
       county,
-      url,
+      zip_code,
+      state,
       facebook,
       twitter,
       instagram
@@ -29,12 +29,12 @@ export default class AddResource extends React.Component {
       category.value,
       title.value,
       phone_number.value,
+      url.value,
       street.value,
       city.value,
-      state.value,
-      zip_code.value,
       county.value,
-      url.value,
+      zip_code.value,
+      state.value,
       facebook.value,
       twitter.value,
       instagram.value
@@ -44,12 +44,12 @@ export default class AddResource extends React.Component {
         resource.category.value = '',
         resource.title.value = '',
         resource.phone_number.value = '',
+        resource.url.value = '',
         resource.street.value = '',
         resource.city.value = '',
-        resource.state.value = '',
-        resource.zip_code.value = '',
         resource.county.value = '',
-        resource.url.value = '',
+        resource.zip_code.value = '',
+        resource.state.value = '',
         resource.facebook.value = '',
         resource.twitter.value = '',
         resource.instagram.value = ''
@@ -85,7 +85,7 @@ export default class AddResource extends React.Component {
               </li>
               <li>
                 <Input
-                  name='category'
+                  name='category: Disability Services'
                   type='radio'
                 >
                 </Input>
@@ -155,7 +155,7 @@ export default class AddResource extends React.Component {
             </Input>
           </li>
           <li>
-            <label htmlFor="address">Street Address:</label>
+            <label htmlFor="street">Street Address:</label>
             <Input
               name='street'
             >

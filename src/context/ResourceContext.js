@@ -1,17 +1,17 @@
 import React from 'react';
 
 export const nullResource = {
+  category: [],
   title: [],
-  category: [], 
-  phone_number: [], 
-  street_address: [], 
-  city: [], 
-  state: [], 
-  zip_code: [], 
-  county: [], 
-  url: [], 
-  facebook: [], 
-  twitter: [], 
+  phone_number: [],
+  url: [],
+  street: [],
+  city: [],
+  county: [],
+  zip_code: [],
+  state: [],
+  facebook: [],
+  twitter: [],
   instagram: [],
 }
 
