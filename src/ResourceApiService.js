@@ -13,6 +13,7 @@ const ResourceApiService = {
       );
   },
   getResource(resourceId) {
+    console.log('API', resourceId)
     return fetch(`${config.API_ENDPOINT}/resources/${resourceId}`, {
       headers: {
         // 'authorization' : `basic ${TokenService.getAuthToken()}`,
@@ -25,7 +26,7 @@ const ResourceApiService = {
       );
   },
   deleteResource(resourceId) {
-    return fetch(`${config.API_ENDPOINT}/admin/${resourceId}`, {
+    return fetch(`${config.API_ENDPOINT}/${resourceId}`, {
       method: 'DELETE',
       headers: {
         // 'authorization' : `basic ${TokenService.getAuthToken()}`,
@@ -52,7 +53,7 @@ const ResourceApiService = {
     twitter,
     instagram
   ) {
-    return fetch(`${config.API_ENDPOINT}/resources/add`, {
+    return fetch(`${config.API_ENDPOINT}/resources`, {
       method: 'POST',
       headers: {
         // 'authorization' : `basic ${TokenService.getAuthToken()}`, // protected endpoints
@@ -95,7 +96,7 @@ const ResourceApiService = {
     twitter,
     instagram
   ) {
-    return fetch(`${config.API_ENDPOINT}/add-resource`, {
+    return fetch(`${config.API_ENDPOINT}/${resourceId}`, {
       method: 'PATCH',
       headers: {
         // 'authorization' : `basic ${TokenService.getAuthToken()}`, // protected endpoints

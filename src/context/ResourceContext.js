@@ -1,6 +1,7 @@
 import React from 'react';
 
 export const nullResource = {
+  resource_id: [],
   category: [],
   title: [],
   phone_number: [],
@@ -25,7 +26,7 @@ const ResourceContext = React.createContext({
   clearResource: () => {},
   setResources: () => {},
   addResource: () => {},
-  editResource: () => {},
+  updateResource: () => {},
   deleteResource: () => {},
 })
 
@@ -65,13 +66,25 @@ export class ResourceProvider extends React.Component {
     ])
   }
 
-  editResource = resource => {
-    this.setState({ resource }) //resource.edit
+  updateResource = updatedResource => {
+    const newResources = this.state.resources.map(res =>
+      (res.id === updatedResource.id)
+        ? updatedResource
+        : res
+      )
+      this.setState({
+        resources: newResources
+      })
   }
 
   deleteResource = resource => {
-    this.setState({ resource }) //resource.delete
+    this.setState({ resource }).delete() //resource.delete
   }
+
+  // deleteResource = resourceId => {
+  //   const resources = this.state.resources.filter(resource => resource.id == resourceId)
+  //   this.setState({ resources: resource }) 
+  // }
 
   render() {
     const value = {
@@ -84,7 +97,7 @@ export class ResourceProvider extends React.Component {
       setResources: this.setResources,
       clearResource: this.clearResource,
       addResource: this.addResource,
-      editResource: this.editResource,
+      updateResource: this.updateResource,
       deleteResource: this.deleteResource,
     }
     return (

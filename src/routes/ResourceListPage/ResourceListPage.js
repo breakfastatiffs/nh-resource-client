@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ResourceApiService from '../../ResourceApiService';
 import ResourceListContext from '../../context/ResourceListContext';
 import { Section } from '../../helper';
 import Resource from '../../components/Resource/Resource';
 import './ResourceListPage.css';
 
-export default class ResourceListPage extends Component {
+export default class ResourceListPage extends React.Component {
   static contextType = ResourceListContext
 
   componentDidMount () { 

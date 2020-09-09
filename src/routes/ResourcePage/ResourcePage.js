@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import ResourceContext from '../../context/ResourceContext';
 import ResourceApiService from '../../ResourceApiService';
-import { Hyph, Section } from '../../helper';
+import { Section } from '../../helper';
 import './ResourcePage.css';
 
 export default class ResourcePage extends React.Component {
   static defaultProps = {
     match: {
       params: {}
-    },
+    }
   }
 
   static contextType = ResourceContext
@@ -27,12 +28,9 @@ export default class ResourcePage extends React.Component {
 
   renderResource() {
     const { resource } = this.context
+    const { resourceId } = this.props.match.params
     return <>
       <ResourceContent resource={resource} />
-      <div className='crudBtns'>
-        <EditResource resource={resource} />
-        <DeleteResource resource={resource} />
-      </div>
     </>
   }
 
@@ -58,7 +56,7 @@ export default class ResourcePage extends React.Component {
 
 function ResourceContent({ resource }) {
   return (
-    <p className='ResourcePageContent'>
+    <div className='ResourcePageContent'>
       <ul className='ResourcePageUL'>
         <div className='ResourcePageHeader'>
           <span className='ResourcePageTitle'>{resource.title}</span>
@@ -88,29 +86,16 @@ function ResourceContent({ resource }) {
           <a href={`${resource.twitter}`} className='fa fa-twitter' target='_blank'></a>
           <a href={`${resource.instagram}`} className='fa fa-instagram' target='_blank'></a>
           <p>Follow their social media pages!</p>
-
         </li>
+        <div className='crudBtns'>
+      <Link to={`/edit/${resource.resource_id}`}>Edit</Link>
+      <button onClick={() => {
+        deleteResource(resource.id)
+      }}>
+        Delete
+      </button>
+      </div>
       </ul>
-    </p>
-  )
-}
-
-function EditResource({ resource }) {
-  return (
-    <button
-      className='editBtn'
-      onClick={() => resource.editResource(resource.id)}
-    >
-      Edit</button>
-  )
-}
-
-function DeleteResource({ resource }) {
-  return (
-    <button
-      className='deleteBtn'
-      onClick={() => resource.deleteResource(resource.id)}
-    >
-      Delete</button>
+    </div>
   )
 }

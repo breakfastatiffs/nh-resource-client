@@ -9,7 +9,8 @@ import NotFoundPage from'../../routes/NotFoundPage/NotFoundPage';
 import { ResourceListProvider } from '../../context/ResourceListContext';
 import { ResourceProvider } from '../../context/ResourceContext';
 import './App.css';
-import AddResource from '../../routes/AddResource/AddResource';
+import AddResource from '../AddResource/AddResource';
+import EditResource from '../EditResource/EditResource';
 
 export default class App extends React.Component {
   state = { hasError: false }
@@ -48,6 +49,10 @@ export default class App extends React.Component {
               <Route
               path={'/resources'}
               component={AddResource}
+              />
+              <Route
+              path={'/edit/:resourceId'}
+              component={EditResource}
               />
               <Route
               component={NotFoundPage}
