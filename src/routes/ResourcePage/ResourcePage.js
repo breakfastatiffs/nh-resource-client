@@ -28,7 +28,6 @@ export default class ResourcePage extends React.Component {
 
   renderResource() {
     const { resource } = this.context
-    const { resourceId } = this.props.match.params
     return <>
       <ResourceContent resource={resource} />
     </>
@@ -90,7 +89,7 @@ function ResourceContent({ resource }) {
         <div className='crudBtns'>
       <Link to={`/edit/${resource.resource_id}`}>Edit</Link>
       <button onClick={() => {
-        deleteResource(resource.id)
+        ResourceApiService.deleteResource(resource.resource_id)
       }}>
         Delete
       </button>

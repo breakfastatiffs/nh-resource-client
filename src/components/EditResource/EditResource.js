@@ -4,11 +4,11 @@ import ResourceApiService from '../../ResourceApiService';
 import { Button, Input } from '../../helper';
 
 export default class EditResource extends React.Component {
+
   static contextType = ResourceContext
 
   componentDidMount() {
     const {resourceId} = this.props.match.params
-    console.log('EDIT', resourceId)
     this.context.clearError()
     ResourceApiService.getResource(resourceId)
       .then(this.context.setResource)
@@ -16,12 +16,12 @@ export default class EditResource extends React.Component {
   }
 
   handleSubmit = e => {
+    // const {resource} = this.props.match.params
     e.preventDefault()
-    ResourceApiService.patchResource()
-      .then(data => {
-        this.context.updateResource(data)
-      })
-      .catch(this.context.setError)
+    // ResourceApiService.patchResource()
+      // .then(this.context.updateResource()
+      // )
+      // .catch(this.context.setError)
     const { resource } = this.context
     const {
       category,
@@ -37,9 +37,10 @@ export default class EditResource extends React.Component {
       twitter,
       instagram
     } = e.target
+    console.log('TITLE', title.value)
 
     ResourceApiService.patchResource(
-      resource_id.value,
+      resource.resource_id,
       category.value,
       title.value,
       phone_number.value,
@@ -55,23 +56,24 @@ export default class EditResource extends React.Component {
     )
       .then(this.context.patchResource)
       .then(() => {
-        resource.category.value = '',
+        resource.category,//.value = '',
         resource.title.value = '',
-        resource.phone_number.value = '',
-        resource.url.value = '',
-        resource.street.value = '',
-        resource.city.value = '',
-        resource.county.value = '',
-        resource.zip_code.value = '',
-        resource.state.value = '',
-        resource.facebook.value = '',
-        resource.twitter.value = '',
-        resource.instagram.value = ''
+        resource.phone_number,//.value = '',
+        resource.url,//.value= '',
+        resource.street,//.value = '',
+        resource.city,//.value = '',
+        resource.county,//.value = '',
+        resource.zip_code,//.value = '',
+        resource.state,//.value = '',
+        resource.facebook,//.value = '',
+        resource.twitter,//.value = '',
+        resource.instagram//.value = ''
       })
       .catch(this.context.setError)
   }
 
   render() {
+    console.log('render', this.context.title)
     const {
       category,
       title,
@@ -85,7 +87,7 @@ export default class EditResource extends React.Component {
       facebook,
       twitter,
       instagram
-    } = this.context
+    } = this.context.resource
     return (
       <form
         id="edit"
@@ -99,7 +101,8 @@ export default class EditResource extends React.Component {
                 <Input
                   name='category'
                   type='radio'
-                  value={category}
+                  value='Animal Services'
+                  defaultValue={category}
                 >
                 </Input>
                 <label htmlFor="category-type">Animal Services</label>
@@ -108,7 +111,8 @@ export default class EditResource extends React.Component {
                 <Input
                   name='category'
                   type='radio'
-                  value={category}
+                  value='Disablity Services'
+                  defaultValue={category}
                 >
                 </Input>
                 <label htmlFor="category-type">Disability Services</label>
@@ -117,7 +121,8 @@ export default class EditResource extends React.Component {
                 <Input
                   name='category: Disability Services'
                   type='radio'
-                  value={category}
+                  value='Immigration Services'
+                  defaultValue={category}
                 >
                 </Input>
                 <label htmlFor="category-type">Immigration Services</label>
@@ -126,7 +131,8 @@ export default class EditResource extends React.Component {
                 <Input
                   name='category'
                   type='radio'
-                  value={category}
+                  value='LGBTQ+'
+                  defaultValue={category}
                 >
                 </Input>
                 <label htmlFor="category-type">LGBTQ+</label>
@@ -135,7 +141,8 @@ export default class EditResource extends React.Component {
                 <Input
                   name='category'
                   type='radio'
-                  value={category}
+                  value='Mental Health'
+                  defaultValue={category}
                 >
                 </Input>
                 <label htmlFor="category-type">Mental Health</label>
@@ -144,7 +151,8 @@ export default class EditResource extends React.Component {
                 <Input
                   name='category'
                   type='radio'
-                  value={category}
+                  value='Sexual & Domestic Violence'
+                  defaultValue={category}
                 >
                 </Input>
                 <label htmlFor="category-type">Sexual & Domestic Violence</label>
@@ -153,7 +161,9 @@ export default class EditResource extends React.Component {
                 <Input
                   name='category'
                   type='radio'
-                  value={category}
+                  type='radio'
+                  value='Substance Use'
+                  defaultValue={category}
                 >
                 </Input>
                 <label htmlFor="category-type">Substance Use</label>
@@ -162,7 +172,9 @@ export default class EditResource extends React.Component {
                 <Input
                   name='category'
                   type='radio'
-                  value={category}
+                  type='radio'
+                  value='Veterans'
+                  defaultValue={category}
                 >
                 </Input>
                 <label htmlFor="category-type">Veterans</label>
@@ -173,7 +185,7 @@ export default class EditResource extends React.Component {
             <label htmlFor="title">Business Name:</label>
             <Input
               name='title'
-              value={title}
+              defaultValue={title}
             >
             </Input>
           </li>
@@ -181,7 +193,7 @@ export default class EditResource extends React.Component {
             <label htmlFor="number">Phone Number:</label>
             <Input
               name='phone_number'
-              value={phone_number}
+              defaultValue={phone_number}
             >
             </Input>
           </li>
@@ -189,7 +201,7 @@ export default class EditResource extends React.Component {
             <label htmlFor="url">Website:</label>
             <Input
               name='url'
-              value={url}
+              defaultValue={url}
             >
             </Input>
           </li>
@@ -197,7 +209,7 @@ export default class EditResource extends React.Component {
             <label htmlFor="street">Street Address:</label>
             <Input
               name='street'
-              value={street}
+              defaultValue={street}
             >
             </Input>
           </li>
@@ -205,7 +217,7 @@ export default class EditResource extends React.Component {
             <label htmlFor="town">Town:</label>
             <Input
               name='city'
-              value={city}
+              defaultValue={city}
             >
             </Input>
           </li>
@@ -213,7 +225,7 @@ export default class EditResource extends React.Component {
             <label htmlFor="county">County:</label>
             <Input
               name='county'
-              value={county}
+              defaultValue={county}
             >
             </Input>
           </li>
@@ -221,7 +233,7 @@ export default class EditResource extends React.Component {
             <label htmlFor="zip_code">Zipcode:</label>
             <Input
               name='zip_code'
-              value={zip_code}
+              defaultValue={zip_code}
             >
             </Input>
           </li>
@@ -229,7 +241,7 @@ export default class EditResource extends React.Component {
             <label htmlFor="state">State:</label>
             <Input
               name='state'
-              value={state}
+              defaultValue={state}
             >
             </Input>
           </li>
@@ -237,7 +249,7 @@ export default class EditResource extends React.Component {
             <label htmlFor="facebook">Facebook:</label>
             <Input
               name='facebook'
-              value={facebook}
+              defaultValue={facebook}
             >
             </Input>
           </li>
@@ -245,7 +257,7 @@ export default class EditResource extends React.Component {
             <label htmlFor="twitter">Twitter:</label>
             <Input
               name='twitter'
-              value={twitter}
+              defaultValue={twitter}
             >
             </Input>
           </li>
@@ -253,7 +265,7 @@ export default class EditResource extends React.Component {
             <label htmlFor="address">Instagram:</label>
             <Input
               name='instagram'
-              value={instagram}
+              defaultValue={instagram}
             >
             </Input>
           </li>

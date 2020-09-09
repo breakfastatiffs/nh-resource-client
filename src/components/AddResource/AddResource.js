@@ -71,6 +71,7 @@ export default class AddResource extends React.Component {
                 <Input
                   name='category'
                   type='radio'
+                  value='Animal Services'
                 >
                 </Input>
                 <label htmlFor="category-type">Animal Services</label>
@@ -79,6 +80,7 @@ export default class AddResource extends React.Component {
                 <Input
                   name='category'
                   type='radio'
+                  value='Disablity Services'
                 >
                 </Input>
                 <label htmlFor="category-type">Disability Services</label>
@@ -87,6 +89,7 @@ export default class AddResource extends React.Component {
                 <Input
                   name='category: Disability Services'
                   type='radio'
+                  value='Immigration Services'
                 >
                 </Input>
                 <label htmlFor="category-type">Immigration Services</label>
@@ -95,6 +98,7 @@ export default class AddResource extends React.Component {
                 <Input
                   name='category'
                   type='radio'
+                  value='LGBTQ+'
                 >
                 </Input>
                 <label htmlFor="category-type">LGBTQ+</label>
@@ -103,6 +107,7 @@ export default class AddResource extends React.Component {
                 <Input
                   name='category'
                   type='radio'
+                  value='Mental Health'
                 >
                 </Input>
                 <label htmlFor="category-type">Mental Health</label>
@@ -111,6 +116,7 @@ export default class AddResource extends React.Component {
                 <Input
                   name='category'
                   type='radio'
+                  value='Sexual & Domestic Violence'
                 >
                 </Input>
                 <label htmlFor="category-type">Sexual & Domestic Violence</label>
@@ -119,6 +125,7 @@ export default class AddResource extends React.Component {
                 <Input
                   name='category'
                   type='radio'
+                  value='Substance Use'
                 >
                 </Input>
                 <label htmlFor="category-type">Substance Use</label>
@@ -127,6 +134,7 @@ export default class AddResource extends React.Component {
                 <Input
                   name='category'
                   type='radio'
+                  value='Veterans'
                 >
                 </Input>
                 <label htmlFor="category-type">Veterans</label>
