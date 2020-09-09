@@ -6,11 +6,6 @@ import { Section } from '../../helper';
 import './ResourcePage.css';
 
 export default class ResourcePage extends React.Component {
-  static defaultProps = {
-    match: {
-      params: {}
-    }
-  }
 
   static contextType = ResourceContext
 
@@ -77,7 +72,7 @@ function ResourceContent({ resource }) {
             <span>{resource.state}</span>
           </li>
           <li id='ResourcePageIL'>
-            <span>{resource.zipcode}</span>
+            <span>{resource.zip_code}</span>
           </li>
         </div>
         <li className='SocialMedia' id='ResourcePageIL'>
@@ -86,14 +81,15 @@ function ResourceContent({ resource }) {
           <a href={`${resource.instagram}`} className='fa fa-instagram' target='_blank'></a>
           <p>Follow their social media pages!</p>
         </li>
+
         <div className='crudBtns'>
-      <Link to={`/edit/${resource.resource_id}`}>Edit</Link>
-      <button onClick={() => {
-        ResourceApiService.deleteResource(resource.resource_id)
-      }}>
-        Delete
+          <Link to={`/edit/${resource.resource_id}`}>Edit</Link>
+          <button onClick={() => {
+            ResourceApiService.deleteResource(resource.resource_id)
+          }}>
+            Delete
       </button>
-      </div>
+        </div>
       </ul>
     </div>
   )

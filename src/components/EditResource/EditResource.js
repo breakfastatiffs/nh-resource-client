@@ -4,7 +4,6 @@ import ResourceApiService from '../../ResourceApiService';
 import { Button, Input } from '../../helper';
 
 export default class EditResource extends React.Component {
-
   static contextType = ResourceContext
 
   componentDidMount() {
@@ -16,12 +15,7 @@ export default class EditResource extends React.Component {
   }
 
   handleSubmit = e => {
-    // const {resource} = this.props.match.params
     e.preventDefault()
-    // ResourceApiService.patchResource()
-      // .then(this.context.updateResource()
-      // )
-      // .catch(this.context.setError)
     const { resource } = this.context
     const {
       category,
@@ -56,26 +50,24 @@ export default class EditResource extends React.Component {
     )
       .then(this.context.patchResource)
       .then(() => {
-        resource.category,//.value = '',
-        resource.title.value = '',
-        resource.phone_number,//.value = '',
-        resource.url,//.value= '',
-        resource.street,//.value = '',
-        resource.city,//.value = '',
-        resource.county,//.value = '',
-        resource.zip_code,//.value = '',
-        resource.state,//.value = '',
-        resource.facebook,//.value = '',
-        resource.twitter,//.value = '',
-        resource.instagram//.value = ''
+        resource.category,
+        resource.title,
+        resource.phone_number,
+        resource.url,
+        resource.street,
+        resource.city,
+        resource.county,
+        resource.zip_code,
+        resource.state,
+        resource.facebook,
+        resource.twitter,
+        resource.instagram
       })
       .catch(this.context.setError)
   }
 
   render() {
-    console.log('render', this.context.title)
     const {
-      category,
       title,
       phone_number,
       url,
@@ -102,7 +94,6 @@ export default class EditResource extends React.Component {
                   name='category'
                   type='radio'
                   value='Animal Services'
-                  defaultValue={category}
                 >
                 </Input>
                 <label htmlFor="category-type">Animal Services</label>
@@ -112,7 +103,6 @@ export default class EditResource extends React.Component {
                   name='category'
                   type='radio'
                   value='Disablity Services'
-                  defaultValue={category}
                 >
                 </Input>
                 <label htmlFor="category-type">Disability Services</label>
@@ -122,7 +112,6 @@ export default class EditResource extends React.Component {
                   name='category: Disability Services'
                   type='radio'
                   value='Immigration Services'
-                  defaultValue={category}
                 >
                 </Input>
                 <label htmlFor="category-type">Immigration Services</label>
@@ -132,7 +121,6 @@ export default class EditResource extends React.Component {
                   name='category'
                   type='radio'
                   value='LGBTQ+'
-                  defaultValue={category}
                 >
                 </Input>
                 <label htmlFor="category-type">LGBTQ+</label>
@@ -142,7 +130,6 @@ export default class EditResource extends React.Component {
                   name='category'
                   type='radio'
                   value='Mental Health'
-                  defaultValue={category}
                 >
                 </Input>
                 <label htmlFor="category-type">Mental Health</label>
@@ -152,7 +139,6 @@ export default class EditResource extends React.Component {
                   name='category'
                   type='radio'
                   value='Sexual & Domestic Violence'
-                  defaultValue={category}
                 >
                 </Input>
                 <label htmlFor="category-type">Sexual & Domestic Violence</label>
@@ -163,7 +149,6 @@ export default class EditResource extends React.Component {
                   type='radio'
                   type='radio'
                   value='Substance Use'
-                  defaultValue={category}
                 >
                 </Input>
                 <label htmlFor="category-type">Substance Use</label>
@@ -174,7 +159,6 @@ export default class EditResource extends React.Component {
                   type='radio'
                   type='radio'
                   value='Veterans'
-                  defaultValue={category}
                 >
                 </Input>
                 <label htmlFor="category-type">Veterans</label>
@@ -270,6 +254,7 @@ export default class EditResource extends React.Component {
             </Input>
           </li>
           <Button id="submitbtn" type="submit">Update</Button>
+          <button onClick={() => this.props.history.push('/')}>Cancel</button>
         </ul>
       </form>
     )

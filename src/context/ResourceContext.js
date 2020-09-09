@@ -59,7 +59,7 @@ export class ResourceProvider extends React.Component {
     this.setResource(nullResource)
   }
 
-  addResource = resources => {
+  addResource = resource => {
     this.setResources([
       ...this.state.resources,
       resource
@@ -77,14 +77,6 @@ export class ResourceProvider extends React.Component {
       })
   }
 
-  deleteResource = resource => {
-    this.setState({ resource }).delete() //resource.delete
-  }
-
-  // deleteResource = resourceId => {
-  //   const resources = this.state.resources.filter(resource => resource.id == resourceId)
-  //   this.setState({ resources: resource }) 
-  // }
 
   render() {
     const value = {
@@ -98,7 +90,6 @@ export class ResourceProvider extends React.Component {
       clearResource: this.clearResource,
       addResource: this.addResource,
       updateResource: this.updateResource,
-      deleteResource: this.deleteResource,
     }
     return (
       <ResourceContext.Provider value={value}>

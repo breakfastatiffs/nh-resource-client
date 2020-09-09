@@ -21,17 +21,16 @@ p, a {
 button {
     display: inline-block;
     background-color: #5E6572;
-        border-radius: 10%;
         border: 2px double #cccccc;
         color: #eeeeee;
         text-align: center;
-        font-size: .75em;
-        padding: .45em;
-        width: 65px;
+        padding: 8px 16px;
         transition: all 0.5s;
         cursor: pointer;
+        text-transform: uppercase;
+        letter-spacing: .09em;
+        border-radius: 2px;
 }
-background-color: #DBE0E6;
 
 button span{
     display: inline-block;

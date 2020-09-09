@@ -5,7 +5,7 @@ export function Hyph() {
 }
 
 export function Button({ className, ...props }) {
-  return <button className={['Button', className].join(' ')} {...props} />
+  return <button className={['Button', className].join(' ')} {...props}  />
 }
 
 export function Textarea({ className, ...props }) {
