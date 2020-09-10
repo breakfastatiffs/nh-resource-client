@@ -76,11 +76,11 @@ export default class AddResource extends React.Component {
             </Input>
           </li>
           <li>
-            <label htmlFor='number'>Phone Number:</label>
+            <label htmlFor='phone_number'>Phone Number:</label>
             <Input
               name='phone_number'
               type='tel'
-              id='number'
+              id='phone_number'
               placeholder='603 225 2739'
             >
             </Input>
