@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Resource.css';
-import { Hyph } from '../../helper';
 
 export default class Resource extends React.Component {
   render() {

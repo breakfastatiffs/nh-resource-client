@@ -2,6 +2,7 @@ import React from 'react';
 import ResourceContext from '../../context/ResourceContext';
 import ResourceApiService from '../../ResourceApiService';
 import { Button, Input } from '../../helper';
+import '../AddResource/AddResource.css';
 
 export default class EditResource extends React.Component {
   static contextType = ResourceContext
@@ -208,11 +209,10 @@ export default class EditResource extends React.Component {
             >
             </Input>
           </li>
-          <ul className='flex-inner'>
-          <div className='category-options'>
               <li>
               <label htmlFor='category'>Category Type:</label>
               </li>
+          <ul className='flex-inner'>
               <li>
                 <Input
                   name='category'
@@ -293,7 +293,6 @@ export default class EditResource extends React.Component {
                 </Input>
                 <label htmlFor='veterans'>Veterans</label>
               </li>
-            </div>
         </ul>
         <li>
           <Button to='/' id='submitbtn' type='submit' >Create</Button>

@@ -27,6 +27,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  text-align: center;
 }
 
 .resource-page-inner li{
@@ -34,12 +35,11 @@
   justify-content: space-between;
 }
 
-.resource-page-inner li button{
-  margin-left: auto;
-  padding: 8px 16px;
-  border: none;
+.resource-page-outer li button{
+   margin: auto;
   text-transform: uppercase;
   letter-spacing: .09em;
+  justify-content: space-between;
 }
 
 .resource-page-outer li label,
@@ -95,6 +95,10 @@
   width: 30px;
   text-decoration: none;
   text-align: center;
+}
+
+.fa:hover{
+  color: #E24D28;
 }
 
 .social-media{

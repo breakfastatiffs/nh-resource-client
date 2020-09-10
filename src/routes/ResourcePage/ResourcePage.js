@@ -73,18 +73,18 @@ function ResourceContent({ resource }) {
               <a href={`${resource.facebook}`} className='fa fa-facebook' target='_blank'></a>
               <a href={`${resource.twitter}`} className='fa fa-twitter' target='_blank'></a>
               <a href={`${resource.instagram}`} className='fa fa-instagram' target='_blank'></a>
-              <p>Follow their social media pages!</p>
             </li>
-            <li>
-              {/* <button type='submit' onClick={() => this.props.history.push(`/edit/${resource.resource_id}`)}>Edit</button> */}
-              <Link to={`/edit/${resource.resource_id}`}>Edit</Link>
+          </ul>
+              <li>
+              <p>Follow their social media pages!</p></li><li>
               <button onClick={() => {
                 ResourceApiService.deleteResource(resource.resource_id)
               }}>
                 Delete
               </button>
+              <button type='submit' onClick={() => this.props.history.push(`/edit/${resource.resource_id}`)}>Edit</button>
+              <Link to={`/edit/${resource.resource_id}`}>Edit</Link>
             </li>
-          </ul>
         </ul>
       </div>
     </body>
