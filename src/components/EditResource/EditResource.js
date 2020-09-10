@@ -84,11 +84,11 @@ export default class EditResource extends React.Component {
     return (
 <div className='container'>
       <form
-        id='add-new'
+        id='edit'
         onSubmit={this.handleSubmit}
       >
         <ul className='flex-outer'>
-          <li className='form-control error'>
+          <li>
             <label htmlFor='business-title'>Business Name:</label>
             <Input
               defaultValue={title}
@@ -99,7 +99,6 @@ export default class EditResource extends React.Component {
               required
             >
             </Input>
-              <small>Error Message</small>
           </li>
           <li>
             <label htmlFor='number'>Phone Number:</label>
@@ -108,6 +107,7 @@ export default class EditResource extends React.Component {
               name='phone_number'
               type='tel'
               id='number'
+              pattern='[0-9]{10}'
               placeholder='603 225 2739'
               required
             >
@@ -120,6 +120,7 @@ export default class EditResource extends React.Component {
               name='url'
               type='url'
               id='url'
+              pattern='https?://.+'
               placeholder='https://www.equalityhc.org/'
             >
             </Input>
@@ -142,6 +143,7 @@ export default class EditResource extends React.Component {
               name='city'
               type='text'
               id='city'
+              pattern='^[a-zA-Z]+$'
               placeholder='Concord'
             >
             </Input>
@@ -153,6 +155,7 @@ export default class EditResource extends React.Component {
               name='county'
               type='text'
               id='county'
+              pattern='^[a-zA-Z]+$'
               placeholder='Merrimack'
             >
             </Input>
@@ -164,6 +167,7 @@ export default class EditResource extends React.Component {
               name='zip_code'
               type='text'
               id='zip_code'
+              pattern='[0-9]{5}'
               placeholder='03301'
             >
             </Input>
@@ -175,6 +179,7 @@ export default class EditResource extends React.Component {
               name='state'
               type='text'
               id='state'
+              pattern='^[a-zA-Z]+${2}'
               placeholder='NH'
             >
             </Input>
@@ -186,6 +191,7 @@ export default class EditResource extends React.Component {
               name='facebook'
               type='url'
               id='facebook'
+              pattern='https?://.+'
               placeholder='https://www.equalityhc.org/'
             >
             </Input>
@@ -197,6 +203,7 @@ export default class EditResource extends React.Component {
               name='twitter'
               type='url'
               id='twitter'
+              pattern='https?://.+'
               placeholder='https://twitter.com/EqualityHC'
             >
             </Input>
@@ -208,6 +215,7 @@ export default class EditResource extends React.Component {
               name='instagram'
               type='url'
               id='instagram'
+              pattern='https?://.+'
               placeholder='https://www.instagram.com/equalityhealthcenter/'
             >
             </Input>

@@ -20,11 +20,11 @@
 }
 
 .flex-inner li {
-    width: 100px;
+  width: 100px;
 }
 
 .flex-inner {
-    justify-content: space-between;
+  justify-content: space-between;
 }
 
 .container {
@@ -96,8 +96,21 @@
 }
 
 .flex-outer li button{
-    margin: auto;
-   text-transform: uppercase;
-   letter-spacing: .09em;
-   justify-content: space-between;
- }
+  margin: auto;
+  text-transform: uppercase;
+  letter-spacing: .09em;
+  justify-content: space-between;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control small {
+  visibility: hidden;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
