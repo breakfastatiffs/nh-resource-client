@@ -66,15 +66,17 @@ export default class AddResource extends React.Component {
           onSubmit={this.handleSubmit}
         >
           <ul className='flex-outer'>
-            <li>
+            <li className='form-control error'>
               <label htmlFor='business-title'>Business Name:</label>
               <Input
                 name='title'
                 type='text'
                 id='business-title'
                 placeholder='Equality Health Center'
+                required
               >
               </Input>
+              <small>Error Message</small>
             </li>
             <li>
               <label htmlFor='phone_number'>Phone Number:</label>
@@ -83,6 +85,7 @@ export default class AddResource extends React.Component {
                 type='tel'
                 id='phone_number'
                 placeholder='603 225 2739'
+                required
               >
               </Input>
             </li>
@@ -186,6 +189,7 @@ export default class AddResource extends React.Component {
                   type='radio'
                   value='Animal Services'
                   id='animal-services'
+                  required
                 >
                 </Input>
                 <label htmlFor='animal-services'>Animal Services</label>
