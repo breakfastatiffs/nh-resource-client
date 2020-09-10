@@ -1,12 +1,28 @@
-.ResourceTitle {
-  font-size: 1.1em;
-  font-weight: 600;
+.main-resource{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.ResourceItem {
-  text-decoration: none;
+.main-resource-title{
+  font-size: 1.2em;
+  font-family: 'merriweather sans';
+  text-align: center;
+  letter-spacing: .05em;
 }
 
-.ResourceItem a:hover {
-  cursor: pointer;
+.main-resource p{
+  font-size: 1em;
+  letter-spacing: .02em;
+  text-align: center;
+  color: #2a9d8f;
+}
+
+.main-resource-title:hover{
+  color: #E24D28;
+}
+
+.main-resource-category{
+  height: 40px;
+  margin-bottom: 10px;
 }

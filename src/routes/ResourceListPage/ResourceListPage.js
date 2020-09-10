@@ -3,7 +3,6 @@ import ResourceApiService from '../../ResourceApiService';
 import ResourceListContext from '../../context/ResourceListContext';
 import { Section } from '../../helper';
 import Resource from '../../components/Resource/Resource';
-import './ResourceListPage.css';
 
 export default class ResourceListPage extends React.Component {
   static contextType = ResourceListContext
@@ -27,7 +26,7 @@ export default class ResourceListPage extends React.Component {
     render () {
       const { error } = this.context
       return (
-        <Section list className='ResourceListPage'>
+        <Section>
         {error
           ? <p className='red'>There was an error, try again</p>
           : this.renderResrouces()}

@@ -29,14 +29,12 @@ export default class ResourcePage extends React.Component {
   }
 
   render() {
-    const { error, resource } = this.context
+    const { error } = this.context
     let content
     if (error) {
       content = (error.error === `Resource doesn't exist`)
         ? <p className='red'>Resource not found</p>
         : <p className='red'>There was an error</p>
-      // } else if (!resource.id) {
-      //   content = <div className='loading' />
     } else {
       content = this.renderResource()
     }
@@ -50,46 +48,46 @@ export default class ResourcePage extends React.Component {
 
 function ResourceContent({ resource }) {
   return (
-    <div className='ResourcePageContent'>
-      <ul className='ResourcePageUL'>
-        <div className='ResourcePageHeader'>
-          <span className='ResourcePageTitle'>{resource.title}</span>
+    <div className='resource-page-content'>
+      <ul className='resource-page-outer'>
+        <div className='resource-page-header'>
+          <li className='resource-page-title'>{resource.title}</li>
         </div>
-        <div className='ResourceContacts'>
-          <li className='ResourcePhone' id='ResourcePageIL'>
+        <div className='resource-page-contacts'>
+          <li className='resource-page-phone'>
             <a href={`tel:${resource.phone_number}`}>{resource.phone_number}</a>
           </li>
-          <li id='ResourcePageIL'>
+          <li>
             <a href={`${resource.url}`} target='_blank'>{resource.url}</a>
           </li>
         </div>
         <div className='ResourceAddress'>
-          <li id='ResourcePageIL'>
+          <li>
             <span>{resource.street}</span>
           </li>
-          <li id='ResourcePageIL'>
+          <li>
             <span>{resource.city}, </span>
             <span>{resource.state}</span>
           </li>
-          <li id='ResourcePageIL'>
+          <li>
             <span>{resource.zip_code}</span>
           </li>
         </div>
-        <li className='SocialMedia' id='ResourcePageIL'>
+        <li className='SocialMedia'>
           <a href={`${resource.facebook}`} className='fa fa-facebook' target='_blank'></a>
           <a href={`${resource.twitter}`} className='fa fa-twitter' target='_blank'></a>
           <a href={`${resource.instagram}`} className='fa fa-instagram' target='_blank'></a>
           <p>Follow their social media pages!</p>
         </li>
-
-        <div className='crudBtns'>
+        <li>
+        <button type='submit' onClick={() => this.props.history.push(`/edit/${resource.resource_id}`)}>Edit</button>
           <Link to={`/edit/${resource.resource_id}`}>Edit</Link>
           <button onClick={() => {
             ResourceApiService.deleteResource(resource.resource_id)
           }}>
             Delete
       </button>
-        </div>
+        </li>
       </ul>
     </div>
   )

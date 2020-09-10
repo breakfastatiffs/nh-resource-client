@@ -1,32 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Resource.css';
+import { Hyph } from '../../helper';
 
 export default class Resource extends React.Component {
   render() {
     const { resource } = this.props
     return (
-      <>
-      <Link to={`/resources/${resource.resource_id}`} className='ResourceItem'>
-        <header>
-          <h4 className='ResourceTitle'>{resource.title}</h4>
-        </header>
-      </Link>
-        <main>
-        <ResourceCategory resource={resource} />
-        {resource.id}
-        </main>
-      </>
+      <main className='main-resource'>
+        <Link to={`/resources/${resource.resource_id}`} style={{ textDecoration: 'none' }}>
+          <h4 className='main-resource-title'>{resource.title}</h4>
+          <p>{resource.category}</p>
+        </Link>
+          ︾
+        <div className='main-resource-category'>
+        </div>
+      </main>
     )
   }
-}
-
-
-function ResourceCategory({ resource }) {
-  return (
-    <span className='category'>
-      {' '}
-      {resource.category}
-    </span>
-  )
 }

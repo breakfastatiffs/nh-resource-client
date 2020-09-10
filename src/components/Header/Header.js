@@ -10,7 +10,7 @@ export default class Header extends React.Component {
         <div class='container'>
           <h1 className='main-title'>
             <Link to='/' style={{ textDecoration: 'none' }}>
-              Altergencies
+              Altergencies:
               </Link>
           </h1>
           <p className='main-subtitle'>For Alternative Emergencies</p>

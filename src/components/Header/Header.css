@@ -1,12 +1,6 @@
-.main-subtitle{
-  color: #5f5956;
-  font-family: helvetica;
-  letter-spacing: .1em;
-  text-align: right;
-}
-
 .main-title{
   font-family: sans-serif;
+  font-size: 2.5em;
   font-weight: 700;
   text-transform: uppercase;
   font-style: italic;
@@ -14,6 +8,14 @@
   height: auto;
   padding-top: 30px;
   background-color: #FFC857;
+}
+
+.main-subtitle{
+  color: #5f5956;
+  font-family: helvetica;
+  font-size: 1.15em;
+  letter-spacing: .1em;
+  text-align: right;
 }
 
 .container{
@@ -47,9 +49,9 @@
 .main-nav a {
   display: inline-block;
   padding: .5em 1.5em;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode';
-  font-weight: 700;
-  font-size: 1em;
+  font-family: tahoma;
+  font-weight: 500;
+  font-size: 1.1em;
 }
 
 .main-nav a:hover{
