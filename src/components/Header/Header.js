@@ -6,7 +6,7 @@ export default class Header extends React.Component {
   render() {
     return (
       <header className='main-header'>
-        <div class='container'>
+        <div className='container'>
           <h1 className='main-title'>
             <Link to='/' style={{ textDecoration: 'none' }}>
               Altergencies:

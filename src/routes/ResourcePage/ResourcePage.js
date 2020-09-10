@@ -48,7 +48,7 @@ export default class ResourcePage extends React.Component {
 
 function ResourceContent({ resource }) {
   return (
-    <body className='resource-page-body'>
+    <main className='resource-page-body'>
       <div className='resource-page-container'>
         <ul className='resource-page-outer'>
           <li className='resource-page-title'>{resource.title}</li>
@@ -87,6 +87,6 @@ function ResourceContent({ resource }) {
             </li>
         </ul>
       </div>
-    </body>
+    </main>
   )
 }

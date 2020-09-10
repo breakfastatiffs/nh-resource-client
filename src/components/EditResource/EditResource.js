@@ -8,7 +8,7 @@ export default class EditResource extends React.Component {
   static contextType = ResourceContext
 
   componentDidMount() {
-    const {resourceId} = this.props.match.params
+    const {resourceId} = this.props.match.params  //failed test cannot read prop of undefined
     this.context.clearError()
     ResourceApiService.getResource(resourceId)
       .then(this.context.setResource)

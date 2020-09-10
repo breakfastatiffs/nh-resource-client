@@ -5,9 +5,7 @@ import ResourceListPage from '../../routes/ResourceListPage/ResourceListPage';
 import ResourcePage from '../../routes/ResourcePage/ResourcePage';
 import About from '../../routes/About/About';
 import AdminLogin from '../../routes/AdminLogin/AdminLogin';
-import NotFoundPage from'../../routes/NotFoundPage/NotFoundPage';
-import { ResourceListProvider } from '../../context/ResourceListContext';
-import { ResourceProvider } from '../../context/ResourceContext';
+import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import './App.css';
 import AddResource from '../AddResource/AddResource';
 import EditResource from '../EditResource/EditResource';
@@ -22,45 +20,43 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <ResourceListProvider>
-        <ResourceProvider>
-          <header>
-            <Header />
-          </header>
-          <main>
-            <Switch>
-              <Route
-                exact
-                path={'/'}
-                component={ResourceListPage}
-              />
-              <Route
-                path={'/resources/:resourceId'}
-                component={ResourcePage}
-              />
-              <Route
+      <>
+        <header>
+          <Header />
+        </header>
+        <main>
+          <Switch>
+            <Route
+              exact
+              path={'/'}
+              component={ResourceListPage}
+            />
+            <Route
+              path={'/resources/:resourceId'}
+              component={ResourcePage}
+            />
+            <Route
               path={'/about'}
               component={About}
-              />
-              <Route
+            />
+            <Route
               path={'/admin-login'}
               component={AdminLogin}
-              />
-              <Route
+            />
+            <Route
               path={'/resources'}
               component={AddResource}
-              />
-              <Route
+            />
+            <Route
               path={'/edit/:resourceId'}
               component={EditResource}
-              />
-              <Route
+            />
+            <Route
               component={NotFoundPage}
-              />
-            </Switch>
-          </main>
-        </ResourceProvider>
-      </ResourceListProvider>
+            />
+          </Switch>
+        </main>
+      </>
     )
   }
 }
