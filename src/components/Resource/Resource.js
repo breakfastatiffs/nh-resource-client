@@ -12,7 +12,7 @@ export default class Resource extends React.Component {
           <h4 className='main-resource-title'>{resource.title}</h4>
           <p>{resource.category}</p>
         </Link>
-          ︾
+         <span className='pagebreak'>▽</span>
         <div className='main-resource-category'>
         </div>
       </main>

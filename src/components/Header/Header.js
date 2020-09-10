@@ -21,7 +21,7 @@ export default class Header extends React.Component {
                   About
               </Link>
               </li>
-              <Hyph />
+              <span>━</span>
               <li id='nav-li'>
                 <Link to='/resources' style={{ textDecoration: 'none' }}>
                   Add Resource

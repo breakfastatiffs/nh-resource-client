@@ -1,3 +1,4 @@
+
 body {
     background:#D8E4FF;
 }
@@ -49,65 +50,6 @@ button:hover span {
 button:hover span:after {
     opacity: 1;
     right: 0;
-}
-.ResourcePageHeader{
-    text-align: center;
-    padding-top: 5px;
-    margin-bottom: 10px;
-}
-
-.ResourcePageUL {
-    display: flex;
-    flex-direction: column;
-    padding: 0 25px;
-  }
-  
-  #ResourcePageIL {
-    padding: .1em;
-    list-style: none;
-    font-size: .92em;
-}
-
-.ResourcePageTitle {
-  font-size: 1.1em;
-  font-weight: 600;
-}
-
-.ResourcePageCategory {
-    font-size: 1em;
-    font-weight: 500;
-}
-
-.ResourceContacts {
-  text-align: center;
-  margin-bottom: 8px;
-}
-
-.ResourcePhone a {
-    color: #F45D01;
-    font-size: 1.1em;
-    font-weight: 500;
-  }
-
-.ResourceAddress {
-  font-style: italic;
-  padding-left: inherit;
-}
-
-.crudBtns{
-  display: flex;
-  justify-content: space-around;
-}
-
-.SocialMedia {
-  text-align: center;
-}
-
-.fa {
-  padding: 20px;
-  font-size: 25px;
-  width: 30px;
-  text-decoration: none;
 }
 
 /* flexbox forms */

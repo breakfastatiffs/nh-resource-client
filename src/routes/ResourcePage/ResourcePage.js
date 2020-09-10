@@ -48,20 +48,16 @@ export default class ResourcePage extends React.Component {
 
 function ResourceContent({ resource }) {
   return (
-    <div className='resource-page-content'>
-      <ul className='resource-page-outer'>
-        <div className='resource-page-header'>
+    <body className='resource-page-body'>
+      <div className='resource-page-container'>
+        <ul className='resource-page-outer'>
           <li className='resource-page-title'>{resource.title}</li>
-        </div>
-        <div className='resource-page-contacts'>
           <li className='resource-page-phone'>
-            <a href={`tel:${resource.phone_number}`}>{resource.phone_number}</a>
+            <a href={`tel:${resource.phone_number}`}>✆ {resource.phone_number}</a>
           </li>
           <li>
-            <a href={`${resource.url}`} target='_blank'>{resource.url}</a>
+            <a className='resource-page-url' href={`${resource.url}`} target='_blank'>{resource.url}</a>
           </li>
-        </div>
-        <div className='ResourceAddress'>
           <li>
             <span>{resource.street}</span>
           </li>
@@ -72,23 +68,25 @@ function ResourceContent({ resource }) {
           <li>
             <span>{resource.zip_code}</span>
           </li>
-        </div>
-        <li className='SocialMedia'>
-          <a href={`${resource.facebook}`} className='fa fa-facebook' target='_blank'></a>
-          <a href={`${resource.twitter}`} className='fa fa-twitter' target='_blank'></a>
-          <a href={`${resource.instagram}`} className='fa fa-instagram' target='_blank'></a>
-          <p>Follow their social media pages!</p>
-        </li>
-        <li>
-        <button type='submit' onClick={() => this.props.history.push(`/edit/${resource.resource_id}`)}>Edit</button>
-          <Link to={`/edit/${resource.resource_id}`}>Edit</Link>
-          <button onClick={() => {
-            ResourceApiService.deleteResource(resource.resource_id)
-          }}>
-            Delete
-      </button>
-        </li>
-      </ul>
-    </div>
+          <ul className='resource-page-inner'>
+            <li className='social-media'>
+              <a href={`${resource.facebook}`} className='fa fa-facebook' target='_blank'></a>
+              <a href={`${resource.twitter}`} className='fa fa-twitter' target='_blank'></a>
+              <a href={`${resource.instagram}`} className='fa fa-instagram' target='_blank'></a>
+              <p>Follow their social media pages!</p>
+            </li>
+            <li>
+              {/* <button type='submit' onClick={() => this.props.history.push(`/edit/${resource.resource_id}`)}>Edit</button> */}
+              <Link to={`/edit/${resource.resource_id}`}>Edit</Link>
+              <button onClick={() => {
+                ResourceApiService.deleteResource(resource.resource_id)
+              }}>
+                Delete
+              </button>
+            </li>
+          </ul>
+        </ul>
+      </div>
+    </body>
   )
 }

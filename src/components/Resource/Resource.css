@@ -2,19 +2,23 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 960px;
+  max-width: 100%;
+  padding: 20px;
+  margin: 0 auto;
 }
 
 .main-resource-title{
-  font-size: 1.2em;
-  font-family: 'merriweather sans';
+  font-size: 1.5em;
+  font-weight: lighter;
   text-align: center;
   letter-spacing: .05em;
 }
 
 .main-resource p{
-  font-size: 1em;
   letter-spacing: .02em;
   text-align: center;
+  font-size: 1.3em;
   color: #2a9d8f;
 }
 
@@ -25,4 +29,8 @@
 .main-resource-category{
   height: 40px;
   margin-bottom: 10px;
+}
+
+.pagebreak{
+  font-size: 1.4em;
 }
