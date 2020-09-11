@@ -32,7 +32,7 @@ export default class App extends React.Component {
               component={ResourceListPage}
             />
             <Route
-              path={'/resources/:resourceId'}
+              path={'/:resourceId'}
               component={ResourcePage}
             />
             <Route
