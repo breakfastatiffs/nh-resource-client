@@ -1,5 +1,3 @@
 export default {
-  API_ENDPOINT: 'https://git.heroku.com/altergencies-server.git/api/resources',
+  API_ENDPOINT: 'https://git.heroku.com/altergencies-server.git',
 };
-
-//https://git.heroku.com/altergencies-server.git
