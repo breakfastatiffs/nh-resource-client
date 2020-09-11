@@ -6,7 +6,10 @@ import { Section } from '../../helper';
 import './ResourcePage.css';
 
 export default class ResourcePage extends React.Component {
-
+  static defaultProps = {
+    match: { params: {} },
+  }
+  
   static contextType = ResourceContext
 
   componentDidMount() {
@@ -78,12 +81,11 @@ function ResourceContent({ resource }) {
               <li>
               <p>Follow their social media pages!</p></li><li>
               <button onClick={() => {
-                ResourceApiService.deleteResource(resource.resource_id)
+                ResourceApiService.deleteResource(resource.resource_id)  //.then(props.history.push('/'))
               }}>
                 Delete
               </button>
-              <button type='submit' onClick={() => this.props.history.push(`/edit/${resource.resource_id}`)}>Edit</button>
-              <Link to={`/edit/${resource.resource_id}`}>Edit</Link>
+              <Link to={`/edit/${resource.resource_id}`} className='editBtn'>Edit</Link>
             </li>
         </ul>
       </div>

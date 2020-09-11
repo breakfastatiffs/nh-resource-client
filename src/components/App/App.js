@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom'
+import { Route, Switch, BrowserRouter } from 'react-router-dom'
 import Header from '../Header/Header';
 import ResourceListPage from '../../routes/ResourceListPage/ResourceListPage';
 import ResourcePage from '../../routes/ResourcePage/ResourcePage';
@@ -20,7 +20,7 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <>
+      <BrowserRouter>
         <header>
           <Header />
         </header>
@@ -56,7 +56,7 @@ export default class App extends React.Component {
             />
           </Switch>
         </main>
-      </>
+      </BrowserRouter>
     )
   }
 }

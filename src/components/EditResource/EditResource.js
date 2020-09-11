@@ -179,7 +179,7 @@ export default class EditResource extends React.Component {
               name='state'
               type='text'
               id='state'
-              pattern='^[a-zA-Z]+${2}'
+              pattern='[a-zA-Z]{2}'
               placeholder='NH'
             >
             </Input>

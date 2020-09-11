@@ -7,12 +7,12 @@ import App from './components/App/App';
 import './index.css';
 
 ReactDOM.render(
-  <ResourceListProvider>
-    <ResourceProvider>
-      <BrowserRouter>
+  <BrowserRouter>
+    <ResourceListProvider>
+      <ResourceProvider>
         <App />
-      </BrowserRouter>
-    </ResourceProvider>
-  </ResourceListProvider>,
+      </ResourceProvider>
+    </ResourceListProvider>
+  </BrowserRouter>,
   document.getElementById('root')
 );

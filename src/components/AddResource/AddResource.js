@@ -53,7 +53,8 @@ export default class AddResource extends React.Component {
           resource.state.value = '',
           resource.facebook.value = '',
           resource.twitter.value = '',
-          resource.instagram.value = ''
+          resource.instagram.value = ''//,
+          //history.push('/')
       })
       .catch(this.context.setError)
   }
@@ -150,7 +151,7 @@ export default class AddResource extends React.Component {
                 type='text'
                 id='state'
                 placeholder='NH'
-                pattern='^[a-zA-Z]+${2}'
+                pattern='^[a-zA-Z]{2}'
               >
               </Input>
             </li>
