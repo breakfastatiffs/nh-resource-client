@@ -32,11 +32,11 @@ export default class App extends React.Component {
               component={ResourceListPage}
             />
             <Route
-              path={'/:resourceId'}
+              path={'/resources/:resourceId'}
               component={ResourcePage}
             />
             <Route
-              path={'/api/resources/about'}
+              path={'/about'}
               component={About}
             />
             <Route
@@ -44,7 +44,7 @@ export default class App extends React.Component {
               component={AdminLogin}
             />
             <Route
-              path={'/resources'}
+              path={'/add-resource'}
               component={AddResource}
             />
             <Route
