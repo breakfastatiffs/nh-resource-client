@@ -8,7 +8,7 @@ p, a {
   font-family: Roboto;
 }
   
-button, .editBtn {
+button{
   display: inline-block;
   background-color: #5E6572;
   border: 2px double #cccccc;
@@ -22,14 +22,14 @@ button, .editBtn {
   border-radius: 2px;
 }
 
-button span, .editBtn span{
+button span{
   display: inline-block;
   position: relative;
   transition: .05s;
   cursor: pointer;
 }
 
-button span:after, .editBtn span:after{
+button span:after{
   content: '\00bb';
   transition: .05s;
   position: absolute;
@@ -39,15 +39,15 @@ button span:after, .editBtn span:after{
   top: 0;
 }
 
-button:hover, .editBtn:hover{
+button:hover{
   background-color: #A9B4C2;
 }
 
-button:hover span, .editBtn:hover span{
+button:hover span{
   padding-right: 5px;
 }
 
-button:hover span:after, .editBtn:hover span:after{
+button:hover span:after{
   opacity: 1;
   right: 0;
 }

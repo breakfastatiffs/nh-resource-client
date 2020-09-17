@@ -85,7 +85,12 @@ function ResourceContent({ resource }) {
               }}>
                 Delete
               </button>
-              <Link to={`/edit/${resource.resource_id}`} className='editBtn'>Edit</Link>
+
+              <button onClick={() => {
+                location.assign(`/edit/${resource.resource_id}`)  //.then(props.history.push('/'))
+              }}>
+                Edit
+              </button>
             </li>
         </ul>
       </div>
