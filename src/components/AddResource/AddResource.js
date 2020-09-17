@@ -275,7 +275,7 @@ export default class AddResource extends React.Component {
               </li>
             </ul>
             <li>
-              <Button to='/' id='submitbtn' type='submit' >Create</Button>
+              <Button id='submitbtn' type='submit' >Create</Button>
               <button type='submit' onClick={() => this.props.history.push('/')}>Cancel</button>
             </li>
           </ul>

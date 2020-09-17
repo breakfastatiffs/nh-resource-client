@@ -81,13 +81,13 @@ function ResourceContent({ resource }) {
               <li>
               <p>Follow their social media pages!</p></li><li>
               <button onClick={() => {
-                ResourceApiService.deleteResource(resource.resource_id)  //.then(props.history.push('/'))
+                ResourceApiService.deleteResource(resource.resource_id)
+                .then(location.assign(`/`))
               }}>
                 Delete
               </button>
-
               <button onClick={() => {
-                location.assign(`/edit/${resource.resource_id}`)  //.then(props.history.push('/'))
+                location.assign(`/edit/${resource.resource_id}`)
               }}>
                 Edit
               </button>

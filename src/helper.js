@@ -1,7 +1,7 @@
 import React from 'react'
 
 export function Button({ className, ...props }) {
-  return <button className={['Button', className].join(' ')} {...props}  />
+  return <button className={['Button', className].join(' ')} {...props} onClick={() => {location.assign(`/`)}} />
 }
 
 export function Input({ className, ...props }) {
