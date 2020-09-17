@@ -36,7 +36,7 @@ export default class App extends React.Component {
               component={ResourcePage}
             />
             <Route
-              path={'/about'}
+              path={'/api/resources/about'}
               component={About}
             />
             <Route
