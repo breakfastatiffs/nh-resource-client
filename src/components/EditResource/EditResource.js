@@ -6,9 +6,14 @@ import '../AddResource/AddResource.css';
 
 export default class EditResource extends React.Component {
   static contextType = ResourceContext
+  static defaultProps = {
+    match: {
+      params: {}
+    },
+  }
 
   componentDidMount() {
-    const {resourceId} = this.props.match.params  //failed test cannot read prop of undefined
+    const {resourceId} = this.props.match.params
     this.context.clearError()
     ResourceApiService.getResource(resourceId)
       .then(this.context.setResource)

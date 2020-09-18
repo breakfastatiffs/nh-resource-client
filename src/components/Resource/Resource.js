@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './Resource.css';
 
 export default class Resource extends React.Component {
+
   render() {
     const { resource } = this.props
     return (
