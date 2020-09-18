@@ -1,21 +1,6 @@
 import React from 'react';
 
-export const nullResource = {
-  // resource: {},
-  // resource_id: [],
-  // category: [],
-  // title: [],
-  // phone_number: [],
-  // url: [],
-  // street: [],
-  // city: [],
-  // county: [],
-  // zip_code: [],
-  // state: [],
-  // facebook: [],
-  // twitter: [],
-  // instagram: [],
-}
+export const nullResource = {}
 
 const ResourceContext = React.createContext({
   resource: nullResource,
@@ -35,7 +20,7 @@ export default ResourceContext
 
 export class ResourceProvider extends React.Component {
   state = {
-    resources:[],
+    resources: [],
     resource: nullResource,
     error: null,
   };
