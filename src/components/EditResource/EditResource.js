@@ -5,12 +5,13 @@ import { Button, Input } from '../../helper';
 import '../AddResource/AddResource.css';
 
 export default class EditResource extends React.Component {
-  static contextType = ResourceContext
   static defaultProps = {
     match: {
       params: {}
     },
   }
+  
+  static contextType = ResourceContext
 
   componentDidMount() {
     const {resourceId} = this.props.match.params

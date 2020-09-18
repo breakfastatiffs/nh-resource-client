@@ -6,7 +6,9 @@ import './ResourcePage.css';
 
 export default class ResourcePage extends React.Component {
   static defaultProps = {
-    match: { params: {} },
+    match: { 
+      params: {} 
+    },
   }
   
   static contextType = ResourceContext

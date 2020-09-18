@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import Resource from '../components/Resource/Resource';
 
-it('renders without crashing', () => {
+it('renders Resource without crashing', () => {
   const div = document.createElement('div');
 
   ReactDom.render(<Resource />, div);
