@@ -1,68 +1,32 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Altergencies - For Alternative Emergencies
 
-## Available Scripts
+[Link to Altergencies](https://nhresource-client.vercel.app/ "Altergencies")
 
-In the project directory, you can run:
+## About Altergencies
+Altergencies is a compilation of emergency and non-emergency contacts for NH. By clicking a resource (business name), a user will be directed to the business's resource page which houses click-through links to call the business, access the bussiness's website, and even their social-media pages (if applicable). Users can view the list of resources, view by ID and are able to add resources, edit existing resources, and delete resources.
 
-### `npm start`
+## Screenshots
+[Home Page](https://flic.kr/p/2jJggor "Home Page")  
+[View Resource By ID Page](https://flic.kr/p/2jJh7ka "By ID")  
+[Add Resource 1/2](https://flic.kr/p/2jJcGeD "Add Resource 1")  
+[Add Resource 2/2](https://flic.kr/p/2jJh7kq "Add Resource 2")  
+[Edit Resource 1/2](https://flic.kr/p/2jJh7jU "Edit Resource 1")  
+[Edit Resource 2/2](https://flic.kr/p/2jJcGdM "Edit Resource 2")  
+[About](https://flic.kr/p/2jJggpd "About")  
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## API Documentation
+Show Resources List : GET /api/resources/  
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Create Resource : POST /api/resources/add-resource/  
 
-### `npm test`
+Show Resource By ID : GET /api/resources/:resource_id/  
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Update A Resource : PATCH /api/resources/edit/:resource_id/  
 
-### `npm run build`
+Delete A Resource : DELETE /api/resources/:resource_id/  
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Technologies Used
+FrontEnd: JavaScript, React, CSS 3, HTML 5, and Jest.  
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+BackEnd: Node.js, Express.js, PostgreSQL, and Mocha & Chai.
