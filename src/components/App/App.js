@@ -4,7 +4,6 @@ import Header from '../Header/Header';
 import ResourceListPage from '../../routes/ResourceListPage/ResourceListPage';
 import ResourcePage from '../../routes/ResourcePage/ResourcePage';
 import About from '../../routes/About/About';
-import AdminLogin from '../../routes/AdminLogin/AdminLogin';
 import NotFoundPage from '../../routes/NotFoundPage/NotFoundPage';
 import './App.css';
 import AddResource from '../AddResource/AddResource';
@@ -38,10 +37,6 @@ export default class App extends React.Component {
             <Route
               path={'/about'}
               component={About}
-            />
-            <Route
-              path={'/admin-login'}
-              component={AdminLogin}
             />
             <Route
               path={'/add-resource'}
