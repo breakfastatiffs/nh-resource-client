@@ -38,7 +38,6 @@ export default class EditResource extends React.Component {
       twitter,
       instagram
     } = e.target
-    console.log('TITLE', title.value)
 
     ResourceApiService.patchResource(
       resource.resource_id,

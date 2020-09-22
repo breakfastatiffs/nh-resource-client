@@ -83,7 +83,8 @@ function ResourceContent({ resource }) {
               <p>Follow their social media pages!</p></li><li>
               <button onClick={() => {
                 ResourceApiService.deleteResource(resource.resource_id)
-              }}>
+              }}
+              >
                 Delete
               </button>
               <button onClick={() => {
