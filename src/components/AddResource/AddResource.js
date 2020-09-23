@@ -53,16 +53,13 @@ export default class AddResource extends React.Component {
           resource.state.value = '',
           resource.facebook.value = '',
           resource.twitter.value = '',
-          resource.instagram.value = ''//,
-          //history.push('/')
-          
-    console.log('inside value', this.category)
+          resource.instagram.value = ''
       })
       .catch(this.context.setError)
+      .then(location.assign('/'))
   }
 
   render() {
-    console.log('inside render', this.category)
     return (
       <div className='container'>
         <form
@@ -195,9 +192,6 @@ export default class AddResource extends React.Component {
               <label htmlFor='category'>Category Type:</label>
             </li>
             <ul className='flex-inner'>
-              <select>
-                <option>Animal Services</option>
-              </select>
               <li>
                 <Input
                   name='category'

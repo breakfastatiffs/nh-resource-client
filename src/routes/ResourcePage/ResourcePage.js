@@ -6,11 +6,11 @@ import './ResourcePage.css';
 
 export default class ResourcePage extends React.Component {
   static defaultProps = {
-    match: { 
-      params: {} 
+    match: {
+      params: {}
     },
   }
-  
+
   static contextType = ResourceContext
 
   componentDidMount() {
@@ -79,20 +79,11 @@ function ResourceContent({ resource }) {
               <a href={`${resource.instagram}`} className='fa fa-instagram' target='_blank'></a>
             </li>
           </ul>
-              <li>
-              <p>Follow their social media pages!</p></li><li>
-              <button onClick={() => {
-                ResourceApiService.deleteResource(resource.resource_id)
-              }}
-              >
-                Delete
-              </button>
-              <button onClick={() => {
-                location.assign(`/edit/${resource.resource_id}`)
-              }}>
-                Edit
-              </button>
-            </li>
+          <li>
+            <p>Follow their social media pages!</p></li><li>
+            <button onClick={() => { ResourceApiService.deleteResource(resource.resource_id) .then(() => location.assign('/')) }}>Delete</button>
+            <button onClick={() => { location.assign(`/edit/${resource.resource_id}`) }}>Edit</button>
+          </li>
         </ul>
       </div>
     </main>

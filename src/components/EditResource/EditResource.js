@@ -70,6 +70,8 @@ export default class EditResource extends React.Component {
         resource.instagram
       })
       .catch(this.context.setError)
+      .then(location.assign('/'))
+
   }
 
   render() {
