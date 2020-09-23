@@ -43,7 +43,7 @@ export default class AddResource extends React.Component {
       .then(this.context.addResource)
       .then(() => {
         resource.category.value = '',
-          resource.title.value = '',
+          resource.title.value = '', 
           resource.phone_number.value = '',
           resource.url.value = '',
           resource.street.value = '',
@@ -55,11 +55,14 @@ export default class AddResource extends React.Component {
           resource.twitter.value = '',
           resource.instagram.value = ''//,
           //history.push('/')
+          
+    console.log('inside value', this.category)
       })
       .catch(this.context.setError)
   }
 
   render() {
+    console.log('inside render', this.category)
     return (
       <div className='container'>
         <form
@@ -192,6 +195,9 @@ export default class AddResource extends React.Component {
               <label htmlFor='category'>Category Type:</label>
             </li>
             <ul className='flex-inner'>
+              <select>
+                <option>Animal Services</option>
+              </select>
               <li>
                 <Input
                   name='category'
@@ -209,19 +215,21 @@ export default class AddResource extends React.Component {
                   type='radio'
                   value='Disablity Services'
                   id='disability-services'
+                  
                 >
                 </Input>
                 <label htmlFor='disability-services'>Disability Services</label>
               </li>
               <li>
                 <Input
-                  name='category: Disability Services'
+                  name='category'
                   type='radio'
                   value='Immigration Services'
                   id='immigration-services'
+                  
                 >
                 </Input>
-                <label htmlFor='disability-services'>Immigration Services</label>
+                <label htmlFor='immigration-services'>Immigration Services</label>
               </li>
               <li>
                 <Input
@@ -229,6 +237,7 @@ export default class AddResource extends React.Component {
                   type='radio'
                   value='LGBTQ+'
                   id='lgbtq'
+                  
                 >
                 </Input>
                 <label htmlFor='lgbtq'>LGBTQ+</label>
@@ -239,6 +248,7 @@ export default class AddResource extends React.Component {
                   type='radio'
                   value='Mental Health'
                   id='mental-health'
+                  
                 >
                 </Input>
                 <label htmlFor='mental-health'>Mental Health</label>
@@ -249,6 +259,7 @@ export default class AddResource extends React.Component {
                   type='radio'
                   value='Sexual & Domestic Violence'
                   id='sexual-and-domestic-violence'
+                  
                 >
                 </Input>
                 <label htmlFor='sexual-and-domestic-violence'>Sexual & Domestic Violence</label>
@@ -259,6 +270,7 @@ export default class AddResource extends React.Component {
                   type='radio'
                   value='Substance Use'
                   id='substance-use'
+                  
                 >
                 </Input>
                 <label htmlFor='substance-use'>Substance Use</label>
@@ -269,6 +281,7 @@ export default class AddResource extends React.Component {
                   type='radio'
                   value='Veterans'
                   id='veterans'
+                  
                 >
                 </Input>
                 <label htmlFor='veterans'>Veterans</label>

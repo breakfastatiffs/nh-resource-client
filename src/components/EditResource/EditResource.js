@@ -252,13 +252,13 @@ export default class EditResource extends React.Component {
               </li>
               <li>
                 <Input
-                  name='category: Disability Services'
+                  name='category'
                   type='radio'
                   value='Immigration Services'
                   id='immigration-services'
                 >
                 </Input>
-                <label htmlFor='disability-services'>Immigration Services</label>
+                <label htmlFor='immigration-services'>Immigration Services</label>
               </li>
               <li>
                 <Input
