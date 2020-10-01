@@ -314,7 +314,7 @@ export default class EditResource extends React.Component {
               </li>
         </ul>
         <li>
-          <Button to='/' id='submitbtn' type='submit' >Update</Button>
+          <Button id='submitbtn' type='submit' >Update</Button>
           <button type='submit' onClick={() => this.props.history.push('/')}>Cancel</button>
         </li>
         </ul>

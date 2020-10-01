@@ -74,6 +74,8 @@ function ResourceContent({ resource }) {
           </li>
           <ul className='resource-page-inner'>
             <li className='social-media'>
+               {/* {renderFacebook(resource)} */}
+              {/* <a href={`${resource.facebook}`}>{resource.facebook}</a> */}
               <a href={`${resource.facebook}`} className='fa fa-facebook' target='_blank'></a>
               <a href={`${resource.twitter}`} className='fa fa-twitter' target='_blank'></a>
               <a href={`${resource.instagram}`} className='fa fa-instagram' target='_blank'></a>
@@ -89,3 +91,13 @@ function ResourceContent({ resource }) {
     </main>
   )
 }
+
+// resource.fb renders an icon even if value is empty
+// need to write function to only show classname icon when value is present
+
+// function renderFacebook ({resource}) {
+//   if (resource.facebook !== '') {
+//     <a href={`${resource.facebook}`} className='fa fa-facebook' target='_blank'></a>
+//   }
+//   return
+// }
