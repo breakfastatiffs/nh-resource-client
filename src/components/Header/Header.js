@@ -14,19 +14,12 @@ export default class Header extends React.Component {
           </h1>
           <p className='main-subtitle'>For Alternative Emergencies</p>
           <nav>
-            <ul className='main-nav-list'>
-              <li id='nav-li'>
-                <Link to='/about' style={{ textDecoration: 'none' }}>
-                  About
+              <Link to='/about' style={{ textDecoration: 'none' }}>
+                About
               </Link>
-              </li>
-              <span>━</span>
-              <li id='nav-li'>
                 <Link to='/add-resource' style={{ textDecoration: 'none' }}>
-                  Add Resource
+                Add
               </Link>
-              </li>
-            </ul>
           </nav>
         </div>
       </header>

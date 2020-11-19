@@ -3,21 +3,21 @@
   flex-direction: column;
   align-items: center;
   max-width: 100%;
-  padding: 20px;
-  margin: 0 auto;
+  margin-bottom: -35px;
 }
 
 .main-resource-title{
-  font-size: 1.5em;
+  font-size: 1.3em;
   font-weight: lighter;
   text-align: center;
   letter-spacing: .05em;
+  padding: 0 15px;
 }
 
 .main-resource p{
   letter-spacing: .02em;
   text-align: center;
-  font-size: 1.3em;
+  font-size: 1.15em;
   color: #2a9d8f;
 }
 
